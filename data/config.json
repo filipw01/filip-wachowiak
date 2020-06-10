@@ -114,8 +114,9 @@
   ],
   "work": [
     {
-      "name": "BlueOwl",
+      "name": "Blue Owl",
       "logo": "/images/blueowl.png",
+      "company_url": "https://blueowl.pl/",
       "position": "Web Developer",
       "startDate": "July 2018",
       "endDate": "Present",
@@ -140,25 +141,24 @@
       ],
       "testimonials": [
         {
-          "image": "/images/blueowl.png",
+          "image": "/images/Krzysztof.jpg",
           "name": "Krzysztof Stola",
-          "position": "UX/UI Designer",
+          "position": "CEO / Head of Design",
           "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Habitant diam nullam sit habitasse. Porttitor cursus gravida semper nisl, scelerisque suspendisse sit. Augue ipsum venenatis adipiscing cras."
         },
         {
-          "image": "/images/blueowl.png",
+          "image": "/images/Marek.jpg",
           "name": "Marek Krupniewski",
-          "position": "UX/UI Designer",
+          "position": "Developer",
           "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Habitant diam nullam sit habitasse. Porttitor cursus gravida semper nisl. A, neque in massa tellus. Enim eget feugiat placerat aliquam platea. "
         },
         {
-          "image": "/images/blueowl.png",
+          "image": "/images/Filip.jpg",
           "name": "Jacek Śledziński",
-          "position": "UX/UI Designer",
+          "position": "CFO",
           "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Habitant diam nullam sit habitasse. Porttitor cursus gravida semper nisl, scelerisque suspendisse sit. Augue ipsum venenatis adipiscing cras. A, neque in massa tellus. Enim eget feugiat placerat aliquam platea. "
         }
       ]
     }
-  ],
-  "timeline": [{ "date": "", "event": "", "image": "/images/filip.jpeg" }]
+  ]
 }

@@ -55,7 +55,12 @@ export default function Work({
 
   return (
     <div className="px-4 py-6 bg-white shadow-lg sm:pb-16 sm:pt-12 sm:px-12 xl:px-20">
-      <a className="block mb-4 sm:mb-12" href={company_url}>
+      <a
+        className="block mb-4 sm:mb-12"
+        href={company_url}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
         <img className="mx-auto" src={logo} alt={name} />
       </a>
       <div className="flex flex-col md:flex-row">

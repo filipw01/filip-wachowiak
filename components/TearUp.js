@@ -17,10 +17,10 @@ export default function TearUp({
       const newTranslateY =
         tearBoundingRect.y + tearBoundingRect.height - window.innerHeight;
 
-      if (newTranslateY > tearBoundingRect.height - 200) {
-        setTranslateY(tearBoundingRect.height - 200);
-      } else if (newTranslateY < 0) {
-        setTranslateY(0);
+      if (newTranslateY > tearBoundingRect.height - 100) {
+        setTranslateY(tearBoundingRect.height - 100);
+      } else if (newTranslateY < 100) {
+        setTranslateY(100);
       } else {
         setTranslateY(newTranslateY);
       }
@@ -34,7 +34,7 @@ export default function TearUp({
     <div
       className="tear-up-parent"
       style={{
-        transform: `translateY(calc(-${translateY}px - 2rem))`,
+        transform: `translateY(calc(-${translateY}px + 6rem))`,
       }}
     >
       <div className="pt-24 bg-seashell tear-up">{children}</div>

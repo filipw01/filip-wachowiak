@@ -15,6 +15,7 @@ export default function WorkSection({ work }) {
           endDate,
           description,
           technologies,
+          company_url,
           testimonials,
         } = job;
         return (
@@ -22,6 +23,7 @@ export default function WorkSection({ work }) {
             key={name}
             name={name}
             logo={logo}
+            company_url={company_url}
             position={position}
             startDate={startDate}
             endDate={endDate}

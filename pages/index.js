@@ -24,7 +24,18 @@ export default function Home(props) {
     <div>
       <Head>
         <title>Filip Wachowiak</title>
-        <link rel="icon" href="/favicon.ico" />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="32x32"
+          href="/images/favicon-32x32.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="16x16"
+          href="/images/favicon-16x16.png"
+        />
       </Head>
       <Navigation
         navigationElements={[
@@ -77,7 +88,6 @@ export async function getStaticProps() {
       languages,
       projects,
       work,
-      timeline,
     },
   };
 }
