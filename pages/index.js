@@ -42,7 +42,7 @@ export default function Home(props) {
             languages={props.languages}
           />
         </TearDown>
-        <div className="pt-16 pb-32" ref={elementRef}>
+        <div className="pt-48 pb-64 -my-32 bg-white " ref={elementRef}>
           <Container ref={project}>
             <ProjectsSection projects={props.projects} />
           </Container>
@@ -51,10 +51,11 @@ export default function Home(props) {
           tearBoundingRect={tearBoundingRect}
           recalculateRect={recalculateRect}
         >
-          <Container ref={work} className="pt-16">
+          <Container className="pt-16">
             <WorkSection work={props.work} />
           </Container>
         </TearUp>
+        <div ref={work}></div>
       </main>
 
       <footer className="relative z-10 bg-seashell">
