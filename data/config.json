@@ -1,0 +1,164 @@
+{
+  "skills": [
+    {
+      "name": "JavaScript",
+      "level": "advanced",
+      "content": "I’m comfortable using modern syntax with async await, destructuring, spreading etc. Most of my experience is Vanilla JS, React, Redux, Styled Components and Gatsby, but I know also Vue, Webpack, Node.js, Express, Apollo, TypeScript and many, many more"
+    },
+    {
+      "name": "HTML",
+      "level": "advanced",
+      "content": "I am using semantic HTML and carefully watching heading levels on my pages. I know what WAI-ARIA is. I’m trying to use aria-* attributes and testing my production code for accessability issues."
+    },
+    {
+      "name": "CSS",
+      "level": "advanced",
+      "content": "I know what margin collapsing is and why another 9 in z-index: 999999999 won’t fix the issue. I feel comfortable using modern grid and flex box. The hardest thing for me is to debug why the heck an element is too ___insert_property_name___ on internet explorer."
+    },
+    {
+      "name": "WebGL",
+      "level": "beginner",
+      "content": "I know something about how to use WebGL however I am not even close to some more advanced implementations. I like this technology and definitely I’d like to dig into it.  "
+    },
+    {
+      "name": "WebAssembly",
+      "level": "beginner",
+      "content": "I have created one simple game with C++ and WebAssembly. For a longer romance with WebAssembly I’m learning Rust and so far I love it. The ideas feel much more natural than those in C++ and Rust compiler is actually helpful."
+    },
+    {
+      "name": "AWS",
+      "level": "beginner",
+      "content": "I’m in the middle of creating my own service based on AWS so I’ve read many articles on the topic. I’ve designed my DynamoDB database to be used efficiently and built GraphQL API using Serverless framework, Apollo Server and AWS Lambda."
+    },
+    {
+      "name": "UI/UX Design",
+      "level": "beginner",
+      "content": "As a passionate Front-end Developer I wanted to develop delightful interfaces. There was no other way for me but to learn design myself. I wouldn’t call my designs beautiful, however I am practising and this design is one of many I’ve created."
+    }
+  ],
+  "languages": [
+    {
+      "name": "Polish",
+      "level": "native",
+      "content": "Well, there is not much to say here. I’m a native speaker"
+    },
+    {
+      "name": "English",
+      "level": "advanced",
+      "content": "I would say I am somewhere between B2 and C1 in terms of my English level. I can communicate freely both writing and talking."
+    },
+    {
+      "name": "German",
+      "level": "intermediate",
+      "content": "Given my prior experience with German in the junior high I can speak freely, but I make a lot of mistakes while doing that. As I’m not using it very much I’m starting to forget it."
+    },
+    {
+      "name": "Italian",
+      "level": "beginner",
+      "content": "This is my latest invention. I’ve been learning Italian for about two years. I feel like I can understand pretty much but only with basic vocabulary. "
+    }
+  ],
+  "projects": [
+    {
+      "name": "Dives",
+      "description": "Serverless API with mobile and web expense tracker app. API is currently under development, mobile and web apps are planned.",
+      "github": "https://github.com/filipw01/wordpress-dockerised",
+      "link": "https://worldsstats.netlify.com/",
+      "video_url": "/videos/sample.mp4",
+      "poster_url": "/videos/samplePoster.png",
+      "technologies": [
+        {
+          "name": "dynamodb",
+          "icon": "/images/dynamodb.svg"
+        },
+        {
+          "name": "apollo",
+          "icon": "/images/apollo.svg"
+        },
+        {
+          "name": "lambda",
+          "icon": "/images/lambda.svg"
+        },
+        {
+          "name": "typescript",
+          "icon": "/images/typescript.svg"
+        }
+      ]
+    },
+    {
+      "name": "Wordpress dockerised",
+      "description": "School notes manager web app. I’m not hosting this project anywhere, but it can be run locally. Create notes and edit them in real time with others. Project was archived because I decided to focus on React and at that moment I lacked time.",
+      "github": "https://github.com/filipw01/wordpress-dockerised",
+      "link": "",
+      "video_url": "/videos/sample.mp4",
+      "poster_url": "/videos/samplePoster.png",
+      "technologies": [
+        {
+          "name": "dynamodb",
+          "icon": "/images/dynamodb.svg"
+        },
+        {
+          "name": "apollo",
+          "icon": "/images/apollo.svg"
+        },
+        {
+          "name": "lambda",
+          "icon": "/images/lambda.svg"
+        },
+        {
+          "name": "typescript",
+          "icon": "/images/typescript.svg"
+        }
+      ]
+    }
+  ],
+  "work": [
+    {
+      "name": "BlueOwl",
+      "logo": "/images/blueowl.png",
+      "position": "Web Developer",
+      "startDate": "July 2018",
+      "endDate": "Present",
+      "description": "My job was mainly about creating custom WordPress themes, but because of my passion for modern web I managed to improve the development process with Docker (see my projects) and was given an opportunity to rewrite Blue Owl website from scratch with Gatsby (it is not available yet). I decided to leave Blue Owl because I am passionate about Front-end and I want to have more opportunities to work with modern high quality JavaScript.",
+      "technologies": [
+        {
+          "name": "dynamodb",
+          "icon": "/images/dynamodb.svg"
+        },
+        {
+          "name": "apollo",
+          "icon": "/images/apollo.svg"
+        },
+        {
+          "name": "lambda",
+          "icon": "/images/lambda.svg"
+        },
+        {
+          "name": "typescript",
+          "icon": "/images/typescript.svg"
+        }
+      ],
+      "testimonials": [
+        {
+          "image": "/images/blueowl.png",
+          "name": "Krzysztof Stola",
+          "position": "UX/UI Designer",
+          "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Habitant diam nullam sit habitasse. Porttitor cursus gravida semper nisl, scelerisque suspendisse sit. Augue ipsum venenatis adipiscing cras."
+        },
+        {
+          "image": "/images/blueowl.png",
+          "name": "Marek Krupniewski",
+          "position": "UX/UI Designer",
+          "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Habitant diam nullam sit habitasse. Porttitor cursus gravida semper nisl. A, neque in massa tellus. Enim eget feugiat placerat aliquam platea. "
+        },
+        {
+          "image": "/images/blueowl.png",
+          "name": "Jacek Śledziński",
+          "position": "UX/UI Designer",
+          "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Habitant diam nullam sit habitasse. Porttitor cursus gravida semper nisl, scelerisque suspendisse sit. Augue ipsum venenatis adipiscing cras. A, neque in massa tellus. Enim eget feugiat placerat aliquam platea. "
+        }
+      ]
+    }
+  ],
+  "timeline": [{ "date": "", "event": "", "image": "/images/filip.jpeg" }]
+}
