@@ -1,12 +1,11 @@
 /* purgecss start ignore */
 @tailwind base;
 @tailwind components;
-/* purgecss end ignore */
-@tailwind utilities;
-
 body {
   @apply bg-seashell;
 }
+/* purgecss end ignore */
+@tailwind utilities;
 
 @font-face {
   font-family: "Playfair Display";
