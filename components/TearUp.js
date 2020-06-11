@@ -41,7 +41,7 @@ export default function TearUp({
       <style jsx>
         {`
           .tear-up-parent {
-            transition: transform 0.3s ease-out;
+            transition: transform 0.1s ease-out;
             filter: drop-shadow(0px -1.5rem 1.5rem rgba(0, 0, 0, 0.1));
           }
           .tear-up {

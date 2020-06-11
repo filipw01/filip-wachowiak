@@ -62,52 +62,100 @@
     {
       "name": "Dives",
       "description": "Serverless API with mobile and web expense tracker app. API is currently under development, mobile and web apps are planned.",
-      "github": "https://github.com/filipw01/wordpress-dockerised",
-      "link": "https://worldsstats.netlify.com/",
+      "github": "https://github.com/filipw01/dives-backend",
+      "link": "",
       "video_url": "/videos/sample.mp4",
-      "poster_url": "/videos/samplePoster.png",
+      "poster_url": "/videos/divesPoster.jpg",
       "technologies": [
         {
-          "name": "dynamodb",
+          "name": "DynamoDB",
           "icon": "/images/dynamodb.svg"
         },
         {
-          "name": "apollo",
+          "name": "Apollo",
           "icon": "/images/apollo.svg"
         },
         {
-          "name": "lambda",
+          "name": "AWS Lambda",
           "icon": "/images/lambda.svg"
         },
         {
-          "name": "typescript",
+          "name": "TypeScript",
           "icon": "/images/typescript.svg"
         }
       ]
     },
     {
+      "name": "Worlds Stats",
+      "description": "Gatsby page with League of Legends Worlds statistics. Data is fetched by custom web scraper and then exported as a JSON to generate the webpage.",
+      "github": "https://github.com/filipw01/worldsstats",
+      "link": "https://worldsstats.netlify.com/",
+      "video_url": "/videos/sample.mp4",
+      "poster_url": "/videos/worldsStatsPoster.jpg",
+      "technologies": [
+        {
+          "name": "React.js",
+          "icon": "/images/react.svg"
+        },
+        {
+          "name": "Gatsby.js",
+          "icon": "/images/gatsby.svg"
+        },
+        {
+          "name": "Puppeteer",
+          "icon": "/images/puppeteer.svg"
+        }
+      ]
+    },
+    {
       "name": "Wordpress dockerised",
-      "description": "School notes manager web app. I’m not hosting this project anywhere, but it can be run locally. Create notes and edit them in real time with others. Project was archived because I decided to focus on React and at that moment I lacked time.",
+      "description": "Docker-compose file for WordPress with theme installation script. Project created to improve the development process in my company. Thanks to my initiative this project significantly reduced compatibility issues when a developer needed to jump into someone else’s project or even wanted to kickstart a new project.",
       "github": "https://github.com/filipw01/wordpress-dockerised",
       "link": "",
       "video_url": "/videos/sample.mp4",
-      "poster_url": "/videos/samplePoster.png",
+      "poster_url": "/videos/wordpressDockerisedPoster.jpg",
       "technologies": [
         {
-          "name": "dynamodb",
-          "icon": "/images/dynamodb.svg"
+          "name": "Docker",
+          "icon": "/images/docker.svg"
         },
         {
-          "name": "apollo",
-          "icon": "/images/apollo.svg"
+          "name": "Bash",
+          "icon": "/images/gnubash.svg"
         },
         {
-          "name": "lambda",
-          "icon": "/images/lambda.svg"
+          "name": "Nginx",
+          "icon": "/images/nginx.svg"
         },
         {
-          "name": "typescript",
-          "icon": "/images/typescript.svg"
+          "name": "PHP",
+          "icon": "/images/php.svg"
+        }
+      ]
+    },
+    {
+      "name": "Pytatki",
+      "description": "School notes manager web app. I’m not hosting this project anywhere, but it can be run locally. Create notes and edit them in real time with others. Project was archived because I decided to focus on React and at that moment I lacked time.",
+      "github": "https://github.com/filipw01/pytatki",
+      "link": "https://pytatki.netlify.app/",
+      "video_url": "/videos/sample.mp4",
+      "poster_url": "/videos/pytatkiPoster.jpg",
+      "technologies": [
+        {
+          "name": "Vue.js",
+          "icon": "/images/vue.svg"
+        },
+        {
+          "name": "Express.js",
+          "icon": "/images/express.svg"
+        },
+        {
+          "name": "GraphQL",
+          "icon": "/images/graphql.svg"
+        },
+        {
+          "name": "MongoDB",
+          "icon": "/images/mongodb.svg"
         }
       ]
     }
@@ -123,20 +171,20 @@
       "description": "My job was mainly about creating custom WordPress themes, but because of my passion for modern web I managed to improve the development process with Docker (see my projects) and was given an opportunity to rewrite Blue Owl website from scratch with Gatsby (it is not available yet). I decided to leave Blue Owl because I am passionate about Front-end and I want to have more opportunities to work with modern high quality JavaScript.",
       "technologies": [
         {
-          "name": "dynamodb",
-          "icon": "/images/dynamodb.svg"
+          "name": "Wordpress",
+          "icon": "/images/wordpress.svg"
         },
         {
-          "name": "apollo",
-          "icon": "/images/apollo.svg"
+          "name": "CSS",
+          "icon": "/images/css.svg"
         },
         {
-          "name": "lambda",
-          "icon": "/images/lambda.svg"
+          "name": "JavaScript",
+          "icon": "/images/js.svg"
         },
         {
-          "name": "typescript",
-          "icon": "/images/typescript.svg"
+          "name": "Docker",
+          "icon": "/images/docker.svg"
         }
       ],
       "testimonials": [

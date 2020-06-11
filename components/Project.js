@@ -26,7 +26,7 @@ export default function Project({
         {technologies.map((technology) => (
           <img
             key={technology.name}
-            className="block w-6 my-6 mr-4 sm:w-8 sm:my-8 sm:mr-10"
+            className="block w-6 my-6 mr-4 sm:w-8 sm:my-8 sm:mr-10 grayscale"
             src={technology.icon}
             alt={technology.name}
           />
@@ -85,6 +85,9 @@ export default function Project({
       </div>
       <style jsx>
         {`
+          .grayscale {
+            filter: grayscale(1);
+          }
           video {
             border: 0.5rem solid #9c2e2e;
           }

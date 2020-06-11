@@ -26,7 +26,7 @@ export default function Navigation({ navigationElements }) {
           </Container>
         </div>
         <div
-          className={`absolute inset-x-0 transform pt-10 lg:pt-0 lg:translate-y-0 -translate-y-16 lg:transform-none lg:transform-none bg-seashell transition-transform duration-300 ease-out shadow-lg lg:shadow-none ${
+          className={`md:static absolute inset-x-0 transform pt-10 lg:pt-0 lg:translate-y-0 -translate-y-16 lg:transform-none lg:transform-none bg-seashell transition-transform duration-300 ease-out shadow-lg lg:shadow-none ${
             menuOpen ? "" : "-translate-y-full"
           }`}
         >
@@ -46,6 +46,7 @@ export default function Navigation({ navigationElements }) {
                     navigationElement.ref.scrollIntoView({
                       behavior: "smooth",
                     });
+                    setMenuOpen(false);
                   }}
                 >
                   {navigationElement.name}

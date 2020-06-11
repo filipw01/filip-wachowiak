@@ -64,7 +64,7 @@ export default function Work({
         <img className="mx-auto" src={logo} alt={name} />
       </a>
       <div className="flex flex-col md:flex-row">
-        <div className="w-full md:w-1/2">
+        <div className="w-full">
           <BaseHeading className="font-normal" level={3}>
             {position}
           </BaseHeading>
@@ -83,7 +83,7 @@ export default function Work({
             ))}
           </div>
         </div>
-        <div className="relative w-full mt-12 text-center md:mt-0 md:ml-4 md:w-1/2 lg:ml-10">
+        <div className="relative hidden w-full mt-12 text-center md:mt-0 md:ml-4 md:w-1/2 lg:ml-10">
           <div className="flex justify-between text-sm">
             <svg
               xmlns="http://www.w3.org/2000/svg"

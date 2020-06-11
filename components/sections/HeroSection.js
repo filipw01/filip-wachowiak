@@ -5,15 +5,20 @@ import BaseHeading from "../base/BaseHeading";
 export default function HeroSection({ nextSectionRef }) {
   return (
     <Container>
-      <div className="flex flex-col items-center justify-center min-h-screen mb-16 md:flex-row sm:mb-0">
+      <div className="flex flex-col items-center justify-center py-20 mb-16 md:min-h-screen md:flex-row sm:mb-0">
         <img
-          className="w-40 mb-4 md:w-auto md:w-1/3 md:mb-0"
+          className="w-full mb-4 md:hidden sm:w-3/4"
+          src="/images/FilipMobile.jpg"
+          alt="Filip Wachowiak"
+        />
+        <img
+          className="hidden w-auto w-1/3 mb-0 md:block"
           src="/images/Filip.jpg"
           alt="Filip Wachowiak"
         />
         <div className="md:w-2/3 md:ml-12">
           <BaseHeading level={1}>
-            <div className="text-2xl font-light lg:text-3xl font-body text-gray">
+            <div className="text-xl font-light lg:text-3xl font-body text-gray">
               My name is Filip Wachowiak
             </div>
             I like seeking the optimal solutions
