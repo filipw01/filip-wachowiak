@@ -112,7 +112,7 @@
       "description": "Docker-compose file for WordPress with theme installation script. Project created to improve the development process in my company. Thanks to my initiative this project significantly reduced compatibility issues when a developer needed to jump into someone else’s project or even wanted to kickstart a new project.",
       "github": "https://github.com/filipw01/wordpress-dockerised",
       "link": "",
-      "video_url": "/videos/sample.mp4",
+      "video_url": "/videos/wordpressDockerised.mp4",
       "poster_url": "/videos/wordpressDockerisedPoster.jpg",
       "technologies": [
         {
