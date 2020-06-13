@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import Head from "next/head";
 import Navigation from "../components/Navigation";
 import HeroSection from "../components/sections/HeroSection";
@@ -9,6 +9,7 @@ import TearDown from "../components/TearDown";
 import TearUp from "../components/TearUp";
 import Container from "../components/base/Container";
 import { useElementBoundingRect } from "../hooks/useElementBoundingRect";
+import ReactGA from "react-ga";
 
 export default function Home(props) {
   const about = useRef(null);
@@ -20,6 +21,13 @@ export default function Home(props) {
     boundingRect,
     recalculateRect,
   } = useElementBoundingRect(() => setTearBoundingRect(boundingRect.current));
+
+  useEffect(() => {
+    ReactGA.initialize("UA-169307383-1");
+    ReactGA.set({ page: window.location.pathname });
+    ReactGA.pageview(window.location.pathname);
+  }, []);
+
   return (
     <div>
       <Head>
