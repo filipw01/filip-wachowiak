@@ -36,6 +36,10 @@ export default function Home(props) {
           sizes="16x16"
           href="/images/favicon-16x16.png"
         />
+        <meta
+          name="description"
+          content="Filip Wachowiak portfolio website with quick overview of skills, projects and work experience."
+        ></meta>
       </Head>
       <Navigation
         navigationElements={[
