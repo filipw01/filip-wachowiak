@@ -6,16 +6,22 @@ export default function HeroSection({ nextSectionRef }) {
   return (
     <Container>
       <div className="flex flex-col items-center justify-center py-20 mb-16 md:min-h-screen md:flex-row sm:mb-0">
-        <img
-          className="w-full mb-4 md:hidden sm:w-3/4"
-          src="/images/FilipMobile.jpg"
-          alt="Filip Wachowiak"
-        />
-        <img
-          className="hidden w-auto w-1/3 mb-0 md:block"
-          src="/images/Filip.jpg"
-          alt="Filip Wachowiak"
-        />
+        <picture className="w-full mb-4 md:hidden sm:w-3/4">
+          <source
+            srcSet="/images/FilipMobileLow.webp 500w, /images/FilipMobile.webp 1.3x"
+            type="image/webp"
+          />
+          <source srcSet="/images/FilipMobileLow.jpg 500w, /images/FilipMobile.jpg 1.3x" />
+          <img src="/images/FilipMobile.jpg" alt="Filip Wachowiak" />
+        </picture>
+        <picture className="hidden w-auto w-1/3 mb-0 md:block">
+          <source
+            srcSet="/images/FilipLow.webp 1300w, /images/Filip.webp 1.3x"
+            type="image/webp"
+          />
+          <source srcSet="/images/FilipLow.jpg 1300w, /images/Filip.jpg 1.3x" />
+          <img src="/images/Filip.jpg" alt="Filip Wachowiak" />
+        </picture>
         <div className="md:w-2/3 md:ml-12">
           <BaseHeading level={1}>
             <div className="text-xl font-light lg:text-3xl font-body text-gray">
