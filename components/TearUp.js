@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useSafariDetector } from "../hooks/useSafariDetector";
 
 export default function TearUp({
   children,
@@ -8,11 +9,15 @@ export default function TearUp({
   const [translateY, setTranslateY] = useState(
     tearBoundingRect.y + tearBoundingRect.height
   );
+  const isSafari = useSafariDetector();
   useEffect(() => {
     setTranslateY(translateY - window.innerHeight);
   }, []);
   useEffect(() => {
     function handleScroll() {
+      if (isSafari) {
+        return setTranslateY(100);
+      }
       recalculateRect();
       const newTranslateY =
         tearBoundingRect.y + tearBoundingRect.height - window.innerHeight;
