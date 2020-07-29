@@ -54,23 +54,27 @@ export default function Work({
   };
 
   return (
-    <div className="px-4 py-6 bg-white shadow-lg sm:pb-16 sm:pt-12 sm:px-12 xl:px-20">
-      <a
-        className="block mb-4 sm:mb-12"
-        href={company_url}
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <img className="mx-auto" src={logo} alt={name} />
-      </a>
+    <div className="px-8 py-6 bg-white shadow-lg sm:pb-16 sm:pt-12 sm:px-12 xl:px-20">
       <div className="flex flex-col md:flex-row">
         <div className="w-full">
-          <BaseHeading className="font-normal" level={3}>
-            {position}
-          </BaseHeading>
-          <p className="mt-1 mb-4 text-xl font-normal uppercase lg:text-2xl">
-            {startDate} - {endDate}
-          </p>
+          <div className="flex flex-col-reverse items-start justify-between lg:flex-row lg:items-center lg:">
+            <div>
+              <BaseHeading className="font-normal" level={3}>
+                {position}
+              </BaseHeading>
+              <p className="mt-1 mb-4 text-xl font-normal uppercase lg:text-2xl">
+                {startDate} - {endDate}
+              </p>
+            </div>
+            <a
+              className="self-center block mb-6 lg:mb-0"
+              href={company_url}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img className="mx-auto" src={logo} alt={name} />
+            </a>
+          </div>
           <p className="text-sm lg:text-md">{description}</p>
           <div className="flex justify-center mt-6">
             {technologies.map((technology) => (

@@ -39,7 +39,7 @@ export default function Navigation({ navigationElements }) {
               {navigationElements.map((navigationElement) => (
                 <a
                   key={navigationElement.name}
-                  className="my-2 text-lg lg:ml-12 font-display"
+                  className="my-2 text-lg transition-colors lg:ml-12 font-display hover:text-red"
                   href=""
                   onClick={(e) => {
                     e.preventDefault();
