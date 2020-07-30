@@ -33,7 +33,7 @@ export default function Navigation({ navigationElements }) {
           <Container>
             <div
               className={`transform flex flex-col items-center justify-end duration-300 ease-out py-8 lg:flex-row ${
-                menuOpen ? "" : "lg:translate-y-0 -translate-y-8"
+                menuOpen ? "" : "lg:translate-y-0 -translate-y-8 opacity-0"
               }`}
             >
               {navigationElements.map((navigationElement) => (

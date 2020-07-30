@@ -7,21 +7,30 @@ import { useSpring, animated, config } from "react-spring";
 export default function HeroSection({ nextSectionRef }) {
   const [movingImage, setMovingImage] = useState(null);
   const [periodicMove, setPeriodicMove] = useState(null);
-  const [props, set, stop] = useSpring(() => ({
+  const [props, set] = useSpring(() => ({
     transform: "translate(0px,0px)",
   }));
 
   const handleLocalMouseDown = (e) => {
-    setMovingImage({ x: e.pageX, y: e.pageY });
+    if (e.pageX) {
+      setMovingImage({ x: e.pageX, y: e.pageY });
+    } else {
+      setMovingImage({ x: e.touches[0].pageX, y: e.touches[0].pageY });
+    }
   };
 
   const handleMouseMove = (e) => {
     if (movingImage !== null) {
+      e.preventDefault();
       clearInterval(periodicMove);
-      const relativeMovement = {
-        x: e.pageX - movingImage.x,
-        y: e.pageY - movingImage.y,
-      };
+      const relativeMovement = {};
+      if (e.pageX) {
+        relativeMovement.x = e.pageX - movingImage.x;
+        relativeMovement.y = e.pageY - movingImage.y;
+      } else {
+        relativeMovement.x = e.touches[0].pageX - movingImage.x;
+        relativeMovement.y = e.touches[0].pageY - movingImage.y;
+      }
       set({
         transform: `translate(${relativeMovement.x}px,${relativeMovement.y}px)`,
       });
@@ -35,9 +44,15 @@ export default function HeroSection({ nextSectionRef }) {
   useEffect(() => {
     window.addEventListener("mousemove", handleMouseMove);
     window.addEventListener("mouseup", handleMouseUp);
+    window.addEventListener("touchmove", handleMouseMove, { passive: false });
+    window.addEventListener("touchend", handleMouseUp);
     return () => {
       window.removeEventListener("mousemove", handleMouseMove);
       window.removeEventListener("mouseup", handleMouseUp);
+      window.removeEventListener("touchmove", handleMouseMove, {
+        passive: false,
+      });
+      window.removeEventListener("touchend", handleMouseUp);
     };
   }, [movingImage]);
 
@@ -66,6 +81,7 @@ export default function HeroSection({ nextSectionRef }) {
             cursor: movingImage === null ? "grab" : "grabbing",
           }}
           onMouseDown={handleLocalMouseDown}
+          onTouchStart={handleLocalMouseDown}
         >
           <picture className="w-full md:hidden sm:w-3/4" draggable="false">
             <source
