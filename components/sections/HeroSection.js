@@ -2,47 +2,49 @@ import { useState, useEffect } from "react";
 import Container from "../base/Container";
 import BaseButton from "../base/BaseButton";
 import BaseHeading from "../base/BaseHeading";
-import { useSpring, animated, config } from "react-spring";
+import { useSpring, animated, config, interpolate } from "react-spring";
 
 export default function HeroSection({ nextSectionRef }) {
-  const [movingImage, setMovingImage] = useState(null);
+  const [grabPosition, setGrabPosition] = useState(null);
   const [periodicMove, setPeriodicMove] = useState(null);
-  const [props, set] = useSpring(() => ({
-    transform: "translate(0px,0px)",
-  }));
+  const [relativePosition, setRelativePosition] = useState({ x: 0, y: 0 });
+  const { x, y } = useSpring({
+    x: relativePosition.x,
+    y: relativePosition.y,
+    config: config.gentle,
+  });
 
   const handleLocalMouseDown = (e) => {
+    e.preventDefault();
     if (e.pageX) {
-      setMovingImage({ x: e.pageX, y: e.pageY });
+      setGrabPosition({ x: e.pageX, y: e.pageY });
     } else {
-      setMovingImage({ x: e.touches[0].pageX, y: e.touches[0].pageY });
+      setGrabPosition({ x: e.touches[0].pageX, y: e.touches[0].pageY });
     }
-  };
-
-  const handleMouseMove = (e) => {
-    if (movingImage !== null) {
-      e.preventDefault();
-      clearInterval(periodicMove);
-      const relativeMovement = {};
-      if (e.pageX) {
-        relativeMovement.x = e.pageX - movingImage.x;
-        relativeMovement.y = e.pageY - movingImage.y;
-      } else {
-        relativeMovement.x = e.touches[0].pageX - movingImage.x;
-        relativeMovement.y = e.touches[0].pageY - movingImage.y;
-      }
-      set({
-        transform: `translate(${relativeMovement.x}px,${relativeMovement.y}px)`,
-      });
-    }
-  };
-  const handleMouseUp = () => {
-    setMovingImage(null);
-    set({ transform: "translate(0px,0px)", config: config.gentle });
   };
 
   useEffect(() => {
-    window.addEventListener("mousemove", handleMouseMove);
+    const handleMouseMove = (e) => {
+      if (grabPosition !== null) {
+        e.preventDefault();
+        clearInterval(periodicMove);
+        const relativeMovement = {};
+        if (e.pageX !== undefined) {
+          relativeMovement.x = e.pageX - grabPosition.x;
+          relativeMovement.y = e.pageY - grabPosition.y;
+        } else {
+          relativeMovement.x = e.touches[0].pageX - grabPosition.x;
+          relativeMovement.y = e.touches[0].pageY - grabPosition.y;
+        }
+        setRelativePosition(relativeMovement);
+      }
+    };
+    const handleMouseUp = () => {
+      setGrabPosition(null);
+      setRelativePosition({ x: 0, y: 0 });
+    };
+
+    window.addEventListener("mousemove", handleMouseMove, { passive: false });
     window.addEventListener("mouseup", handleMouseUp);
     window.addEventListener("touchmove", handleMouseMove, { passive: false });
     window.addEventListener("touchend", handleMouseUp);
@@ -54,16 +56,13 @@ export default function HeroSection({ nextSectionRef }) {
       });
       window.removeEventListener("touchend", handleMouseUp);
     };
-  }, [movingImage]);
+  }, [grabPosition]);
 
   useEffect(() => {
     setPeriodicMove(
       setInterval(() => {
-        set({ transform: "translate(50px,50px)", config: config.molasses });
-        setTimeout(
-          () => set({ transform: "translate(0px,0px)", config: config.gentle }),
-          400
-        );
+        setRelativePosition({ x: 50, y: 50 });
+        setTimeout(() => setRelativePosition({ x: 0, y: 0 }), 400);
       }, 4000)
     );
     return () => {
@@ -77,36 +76,44 @@ export default function HeroSection({ nextSectionRef }) {
         <animated.div
           className="w-full mb-4 md:w-1/3 md:mb-0"
           style={{
-            ...props,
-            cursor: movingImage === null ? "grab" : "grabbing",
+            transform: interpolate(
+              [x, y],
+              (x, y) => `translate3d(${x}px, ${y}px, 0)`
+            ),
+            willChange: "transform",
+            userSelect: "none",
+            userDrag: "none",
+            cursor: grabPosition === null ? "grab" : "grabbing",
           }}
           onMouseDown={handleLocalMouseDown}
           onTouchStart={handleLocalMouseDown}
         >
-          <picture className="w-full md:hidden sm:w-3/4" draggable="false">
-            <source
-              srcSet="/images/FilipMobileLow.webp 500w, /images/FilipMobile.webp 1.3x"
-              type="image/webp"
-            />
-            <source srcSet="/images/FilipMobileLow.jpg 500w, /images/FilipMobile.jpg 1.3x" />
-            <img
-              src="/images/FilipMobile.jpg"
-              alt="Filip Wachowiak"
-              draggable="false"
-            />
-          </picture>
-          <picture className="hidden w-full mb-0 md:block" draggable="false">
-            <source
-              srcSet="/images/FilipLow.webp 1300w, /images/Filip.webp 1.3x"
-              type="image/webp"
-            />
-            <source srcSet="/images/FilipLow.jpg 1300w, /images/Filip.jpg 1.3x" />
-            <img
-              src="/images/Filip.jpg"
-              alt="Filip Wachowiak"
-              draggable="false"
-            />
-          </picture>
+          <div>
+            <picture className="w-full md:hidden sm:w-3/4" draggable="false">
+              <source
+                srcSet="/images/FilipMobileLow.webp 500w, /images/FilipMobile.webp 1.3x"
+                type="image/webp"
+              />
+              <source srcSet="/images/FilipMobileLow.jpg 500w, /images/FilipMobile.jpg 1.3x" />
+              <img
+                src="/images/FilipMobile.jpg"
+                alt="Filip Wachowiak"
+                draggable="false"
+              />
+            </picture>
+            <picture className="hidden w-full mb-0 md:block" draggable="false">
+              <source
+                srcSet="/images/FilipLow.webp 1300w, /images/Filip.webp 1.3x"
+                type="image/webp"
+              />
+              <source srcSet="/images/FilipLow.jpg 1300w, /images/Filip.jpg 1.3x" />
+              <img
+                src="/images/Filip.jpg"
+                alt="Filip Wachowiak"
+                draggable="false"
+              />
+            </picture>
+          </div>
         </animated.div>
 
         <div className="md:w-2/3 md:ml-12">

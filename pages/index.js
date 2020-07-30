@@ -56,7 +56,7 @@ export default function Home(props) {
           { name: "Work experience", ref: work.current },
         ]}
       />
-      <main className="font-light font-body">
+      <main className="overflow-hidden font-light font-body">
         <TearDown>
           <HeroSection nextSectionRef={about.current} />
           <AboutSection
