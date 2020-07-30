@@ -1,10 +1,11 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Container from "../base/Container";
 import BaseButton from "../base/BaseButton";
 import BaseHeading from "../base/BaseHeading";
 import { useSpring, animated, config, interpolate } from "react-spring";
 
 export default function HeroSection({ nextSectionRef }) {
+  const imageWrapper = useRef(null);
   const [grabPosition, setGrabPosition] = useState(null);
   const [periodicMove, setPeriodicMove] = useState(null);
   const [relativePosition, setRelativePosition] = useState({ x: 0, y: 0 });
@@ -14,16 +15,15 @@ export default function HeroSection({ nextSectionRef }) {
     config: config.gentle,
   });
 
-  const handleLocalMouseDown = (e) => {
-    e.preventDefault();
-    if (e.pageX) {
-      setGrabPosition({ x: e.pageX, y: e.pageY });
-    } else {
-      setGrabPosition({ x: e.touches[0].pageX, y: e.touches[0].pageY });
-    }
-  };
-
   useEffect(() => {
+    const handleMouseDown = (e) => {
+      e.preventDefault();
+      if (e.pageX) {
+        setGrabPosition({ x: e.pageX, y: e.pageY });
+      } else {
+        setGrabPosition({ x: e.touches[0].pageX, y: e.touches[0].pageY });
+      }
+    };
     const handleMouseMove = (e) => {
       if (grabPosition !== null) {
         e.preventDefault();
@@ -43,12 +43,19 @@ export default function HeroSection({ nextSectionRef }) {
       setGrabPosition(null);
       setRelativePosition({ x: 0, y: 0 });
     };
-
-    window.addEventListener("mousemove", handleMouseMove, { passive: false });
+    imageWrapper.current.addEventListener("mousedown", handleMouseDown);
+    imageWrapper.current.addEventListener("touchstart", handleMouseDown, {
+      passive: false,
+    });
+    window.addEventListener("mousemove", handleMouseMove);
     window.addEventListener("mouseup", handleMouseUp);
     window.addEventListener("touchmove", handleMouseMove, { passive: false });
     window.addEventListener("touchend", handleMouseUp);
     return () => {
+      imageWrapper.current.removeEventListener("mousedown", handleMouseMove);
+      imageWrapper.current.removeEventListener("touchstart", handleMouseMove, {
+        passive: false,
+      });
       window.removeEventListener("mousemove", handleMouseMove);
       window.removeEventListener("mouseup", handleMouseUp);
       window.removeEventListener("touchmove", handleMouseMove, {
@@ -74,6 +81,7 @@ export default function HeroSection({ nextSectionRef }) {
     <Container>
       <div className="flex flex-col items-center justify-center py-20 mb-16 md:min-h-screen md:flex-row sm:mb-0">
         <animated.div
+          ref={imageWrapper}
           className="w-full mb-4 md:w-1/3 md:mb-0"
           style={{
             transform: interpolate(
@@ -85,8 +93,6 @@ export default function HeroSection({ nextSectionRef }) {
             userDrag: "none",
             cursor: grabPosition === null ? "grab" : "grabbing",
           }}
-          onMouseDown={handleLocalMouseDown}
-          onTouchStart={handleLocalMouseDown}
         >
           <div>
             <picture className="w-full md:hidden sm:w-3/4" draggable="false">
