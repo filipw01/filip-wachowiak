@@ -1,13 +1,11 @@
 import React from "react";
 import Container from "../base/Container";
 import BaseHeading from "../base/BaseHeading";
-import Notice from "../Notice";
 
 const AboutSection = React.forwardRef(({ skills, languages }, ref) => (
   <Container ref={ref}>
     <BaseHeading className="mb-8 text-center md:mb-16">About me</BaseHeading>
     <div className="flex flex-col md:flex-row">
-      <Notice className="md:hidden" />
       <div className="mr-6 md:w-1/2">
         <BaseHeading level={3} className="mb-10">
           Skills
@@ -22,7 +20,6 @@ const AboutSection = React.forwardRef(({ skills, languages }, ref) => (
         ))}
       </div>
       <div className="md:w-1/2">
-        <Notice className="hidden md:flex" />
         <div className="md:ml-12">
           {languages.map((language) => (
             <div key={language.name}>

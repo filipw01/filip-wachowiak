@@ -133,7 +133,6 @@ export default function HeroSection({ nextSectionRef }) {
             I’m young and eager to learn. I specialize in JavaScript but I am
             not closed to other languages. I love optimizing work with scripts
             and other tools. I like clean code but I understand the deadlines.
-            I’d be happy to present you my knowledge
           </p>
           <BaseButton
             marginTop="6"

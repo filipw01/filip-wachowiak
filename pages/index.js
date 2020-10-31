@@ -91,7 +91,7 @@ export default function Home(props) {
 }
 
 export async function getStaticProps() {
-  const { skills, languages, projects, work, timeline } = await import(
+  const { skills, languages, projects, work } = await import(
     `../data/config.json`
   );
   return {
