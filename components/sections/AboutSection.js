@@ -7,26 +7,28 @@ const AboutSection = React.forwardRef(({ skills, languages }, ref) => (
     <BaseHeading className="mb-8 text-center md:mb-16">About me</BaseHeading>
     <div className="flex flex-col md:flex-row">
       <div className="mr-6 md:w-1/2">
-        <BaseHeading level={3} className="mb-10">
+        <BaseHeading level={3} className="mb-8">
           Skills
         </BaseHeading>
         {skills.map((skill) => (
           <div key={skill.name}>
-            <BaseHeading level={4} className="mb-3">
+            <BaseHeading level={5} className="mb-2">
               {skill.name} - <i>{skill.level}</i>
             </BaseHeading>
-            <p className="mb-8">{skill.content}</p>
+            <p className="mb-4">{skill.content}</p>
           </div>
         ))}
       </div>
       <div className="md:w-1/2">
         <div className="md:ml-12">
+          <BaseHeading level={3} className="mb-8">
+            Languages
+          </BaseHeading>
           {languages.map((language) => (
             <div key={language.name}>
-              <BaseHeading level={4} className="mb-3">
+              <BaseHeading level={5} className="mb-4">
                 {language.name} - <i>{language.level}</i>
               </BaseHeading>
-              <p className="mb-8">{language.content}</p>
             </div>
           ))}
           <BaseHeading level={3} className="mt-16 mb-6">

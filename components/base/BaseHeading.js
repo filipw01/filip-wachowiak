@@ -17,11 +17,11 @@ export default function BaseHeading({ children, level = 2, className }) {
       break;
 
     case 4:
-      css += "lg:text-4xl sm:text-3xl text-2xl";
+      css += "lg:text-3xl sm:text-2xl text-xl";
       break;
 
     default:
-      css += "lg:text-3xl sm:text-2xl text-xl";
+      css += "lg:text-2xl sm:text-xl text-xl";
       break;
   }
   return <Heading className={css}>{children}</Heading>;

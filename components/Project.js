@@ -40,7 +40,7 @@ export default function Project({
           autoPlay
           muted
           loop
-        ></video>
+        />
         <div className="inset-x-0 bottom-0 transform sm:translate-y-1/2 sm:absolute">
           <div
             className="px-8 pt-6 pb-8 mx-auto bg-white shadow-lg xl:w-5/6 lg:w-3/4 sm:w-5/6"
@@ -88,14 +88,17 @@ export default function Project({
           .grayscale {
             filter: grayscale(1);
           }
+
           video {
             border: 0.5rem solid #9c2e2e;
           }
+
           @media (min-width: 640px) {
             video {
               border-width: 1.5rem;
             }
           }
+
           @media (max-width: 639px) {
             .project {
               margin-bottom: 2rem !important;

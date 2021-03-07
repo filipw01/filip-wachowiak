@@ -11,69 +11,28 @@ export default function Work({
   endDate,
   description,
   technologies,
-  testimonials,
 }) {
-  const [activeTestimonialIndex, setActiveTestimonialIndex] = useState(0);
-  const testimonialBackgroundRef = useRef(null);
-  const testimonialPersonRef = useRef(null);
-  const [activeTestimonialOffset, setActiveTestimonialOffset] = useState(0);
-  const [testimonialRefs, setTestimonialRefs] = React.useState([]);
-  const {
-    elementRef,
-    boundingRect,
-    recalculateRect,
-  } = useElementBoundingRect();
-
-  useEffect(() => {
-    // add or remove refs
-    setTestimonialRefs((testimonialRefs) =>
-      Array(testimonials.length)
-        .fill()
-        .map((_, i) => testimonialRefs[i] || createRef())
-    );
-  }, [testimonials]);
-
-  useEffect(() => {
-    recalculateRect();
-    testimonialBackgroundRef.current.style.height = `${boundingRect.current.height}px`;
-
-    testimonialPersonRef.current.style.transform = `translateX(${activeTestimonialOffset}px)`;
-  }, [activeTestimonialIndex]);
-
-  const changeTestimonial = (index) => {
-    setActiveTestimonialIndex(index);
-    const testimonialX = testimonialRefs[
-      activeTestimonialIndex
-    ].current.getBoundingClientRect().x;
-    const newTestimonialX = testimonialRefs[
-      index
-    ].current.getBoundingClientRect().x;
-    setActiveTestimonialOffset(
-      activeTestimonialOffset + newTestimonialX - testimonialX
-    );
-  };
-
   return (
-    <div className="px-8 py-6 bg-white shadow-lg sm:pb-16 sm:pt-12 sm:px-12 xl:px-20">
+    <div className="px-6 py-6 bg-white shadow-lg sm:pb-16 sm:pt-12 sm:px-12 xl:px-20">
       <div className="flex flex-col md:flex-row">
         <div className="w-full">
-          <div className="flex flex-col-reverse items-start justify-between lg:flex-row lg:items-center lg:">
+          <div className="flex flex-col items-center text-center">
             <div>
+              <a
+                className="self-center block mb-4"
+                href={company_url}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img className="mx-auto h-8" src={logo} alt={name} />
+              </a>
               <BaseHeading className="font-normal" level={3}>
                 {position}
               </BaseHeading>
-              <p className="mt-1 mb-4 text-xl font-normal uppercase lg:text-2xl">
+              <p className="mt-1 mb-6 text-xl font-normal uppercase lg:text-2xl">
                 {startDate} - {endDate}
               </p>
             </div>
-            <a
-              className="self-center block mb-6 lg:mb-0"
-              href={company_url}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <img className="mx-auto" src={logo} alt={name} />
-            </a>
           </div>
           <p className="text-sm lg:text-md">{description}</p>
           <div className="flex justify-center mt-6">
@@ -109,55 +68,6 @@ export default function Work({
                 <feComposite in="SourceGraphic" in2="goo" operator="atop" />
               </filter>
             </svg>
-            <div className="absolute w-full bg-white goo-filter">
-              <div
-                className="absolute w-1/3 h-56 transition-transform duration-300 ease-in-out lg:w-32 xl:w-40 bg-light-gray"
-                ref={testimonialPersonRef}
-              ></div>
-              <div
-                className="absolute z-0 w-full h-48 goo-big-rect bg-light-gray"
-                ref={testimonialBackgroundRef}
-              ></div>
-            </div>
-
-            {testimonials.map((testimonial, index) => (
-              <a
-                className="relative z-10 flex-shrink-0 w-1/3 p-2 cursor-pointer sm:p-6 md:p-2 xl:p-6"
-                key={testimonial.name}
-                ref={testimonialRefs[index]}
-                onClick={() => changeTestimonial(index)}
-              >
-                <img
-                  className="object-cover w-16 h-16 mx-auto mb-2 rounded-full shadow-lg pointer-events-none sm:w-20 sm:h-20 lg:w-24 lg:h-24"
-                  src={testimonial.image}
-                  alt={testimonial.name}
-                />
-                <p className="text-xs font-normal pointer-events-none sm:text-sm lg:text-md">
-                  {testimonial.name}
-                </p>
-                <p className="text-xs pointer-events-none sm:text-sm lg:text-md">
-                  {testimonial.position}
-                </p>
-              </a>
-            ))}
-          </div>
-          <div
-            className="relative z-10 px-12 pt-2 pb-2 lg:pt-6"
-            ref={elementRef}
-          >
-            <img
-              className="w-6 h-6 transform -translate-x-full translate-y-1/2"
-              src="/images/quote.svg"
-              alt=""
-            />
-            <p className="text-sm lf:text-md">
-              {testimonials[activeTestimonialIndex].content}
-            </p>
-            <img
-              className="w-6 h-6 ml-auto italic transform rotate-180 translate-x-full -translate-y-1/2"
-              src="/images/quote.svg"
-              alt=""
-            />
           </div>
         </div>
       </div>
@@ -169,31 +79,37 @@ export default function Work({
         .goo-big-rect {
           top: 160px;
         }
+
         @media (min-width: 390px) {
           .goo-big-rect {
             top: 140px;
           }
         }
+
         @media (min-width: 460px) {
           .goo-big-rect {
             top: 125px;
           }
         }
+
         @media (min-width: 640px) {
           .goo-big-rect {
             top: 200px;
           }
         }
+
         @media (min-width: 768px) {
           .goo-big-rect {
             top: 190px;
           }
         }
+
         @media (min-width: 1024px) {
           .goo-big-rect {
             top: 190px;
           }
         }
+
         @media (min-width: 1265px) {
           .goo-big-rect {
             top: 220px;

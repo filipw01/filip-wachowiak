@@ -3,73 +3,72 @@
     {
       "name": "JavaScript",
       "level": "advanced",
-      "content": "I’m comfortable using modern syntax with async await, destructuring, spreading etc. Most of my experience is Vanilla JS, React, Redux, Styled Components and Gatsby, but I know also Vue, Webpack, Node.js, Express, Apollo, TypeScript and many, many more"
+      "content": "Most of my experience is React, Styled Components, Node.js and TypeScript"
     },
     {
-      "name": "HTML",
+      "name": "HTML/CSS",
       "level": "advanced",
-      "content": "I am using semantic HTML and carefully watching heading levels on my pages. I know what WAI-ARIA is. I’m trying to use aria-* attributes and testing my production code for accessability issues."
+      "content": "I use semantic HTML with grid/flex layouts"
     },
     {
-      "name": "CSS",
-      "level": "advanced",
-      "content": "I know what margin collapsing is and why another 9 in z-index: 999999999 won’t fix the issue. I feel comfortable using modern grid and flex box. The hardest thing for me is to debug why the heck an element is too ___insert_property_name___ on internet explorer."
+      "name": "Python",
+      "level": "intermediate",
+      "content": "It isn't my daily driver but I know quite a lot"
     },
     {
-      "name": "WebGL",
+      "name": "Rust",
       "level": "beginner",
-      "content": "I know something about how to use WebGL however I am not even close to some more advanced implementations. I like this technology and definitely I’d like to dig into it.  "
+      "content": "My dream job includes Rust. I want to be a better Rustacean"
     },
     {
-      "name": "WebAssembly",
+      "name": "Serverless",
       "level": "beginner",
-      "content": "I have created one simple game with C++ and WebAssembly. For a longer romance with WebAssembly I’m learning Rust and so far I love it. The ideas feel much more natural than those in C++ and Rust compiler is actually helpful."
-    },
-    {
-      "name": "AWS",
-      "level": "beginner",
-      "content": "I’m in the middle of creating my own service based on AWS so I’ve read many articles on the topic. I’ve designed my DynamoDB database to be used efficiently and built GraphQL API using Serverless framework, Apollo Server and AWS Lambda."
+      "content": "I've built AWS Lambda based GraphQL API using Apollo"
     },
     {
       "name": "UI/UX Design",
       "level": "beginner",
-      "content": "As a passionate Front-end Developer I wanted to develop delightful interfaces. There was no other way for me but to learn design myself. I wouldn’t call my designs beautiful, however I am practising and this design is one of many I’ve created."
+      "content": "I want to develop delightful interfaces so read a lot and designed some thing"
     }
   ],
   "languages": [
     {
       "name": "Polish",
-      "level": "native",
-      "content": "Well, there is not much to say here. I’m a native speaker"
+      "level": "C2"
     },
     {
       "name": "English",
-      "level": "advanced",
-      "content": "I would say I am somewhere between B2 and C1 in terms of my English level. I can communicate freely both writing and talking."
+      "level": "B2/C1"
     },
     {
       "name": "German",
-      "level": "intermediate",
-      "content": "Given my prior experience with German in the junior high I can speak freely, but I make a lot of mistakes while doing that. As I’m not using it very much I’m starting to forget it."
+      "level": "B1"
     },
     {
       "name": "Italian",
-      "level": "beginner",
-      "content": "This is my latest invention. I’ve been learning Italian for about two years. I feel like I can understand pretty much but only with basic vocabulary. "
+      "level": "A2"
+    },
+    {
+      "name": "Spanish",
+      "level": "A1"
     }
   ],
   "projects": [
     {
       "name": "Dives",
-      "description": "Serverless API with mobile and web expense tracker app. API is currently under development, mobile and web apps are planned.",
-      "github": "https://github.com/filipw01/dives-backend",
-      "link": "",
+      "description": "Expense tracker - Serverless GraphQL API with mobile Flutter app and React webapp.",
+      "github": "https://github.com/dives-app",
+      "link": "https://dives-txvot44owa-ez.a.run.app",
       "video_url": "/videos/sample.mp4",
       "poster_url": "/videos/divesPoster.jpg",
       "technologies": [
         {
-          "name": "DynamoDB",
-          "icon": "/images/dynamodb.svg"
+          "name": "TypeScript",
+          "icon": "/images/typescript.svg"
+        },
+        {
+          "name": "PostgreSQL",
+          "icon": "/images/PostgreSQL.svg"
         },
         {
           "name": "Apollo",
@@ -78,10 +77,6 @@
         {
           "name": "AWS Lambda",
           "icon": "/images/lambda.svg"
-        },
-        {
-          "name": "TypeScript",
-          "icon": "/images/typescript.svg"
         }
       ]
     },
@@ -108,9 +103,9 @@
       ]
     },
     {
-      "name": "Wordpress dockerised",
-      "description": "Docker-compose file for WordPress with theme installation script. Project created to improve the development process in my company. Thanks to my initiative this project significantly reduced compatibility issues when a developer needed to jump into someone else’s project or even wanted to kickstart a new project.",
-      "github": "https://github.com/filipw01/wordpress-dockerised",
+      "name": "Wordpress dockerized",
+      "description": "Docker-compose file for WordPress. It reduced compatibility issues when a developer needed to jump into someone else’s project.",
+      "github": "https://github.com/filipw01/wordpress-dockerized",
       "link": "",
       "video_url": "/videos/wordpressDockerised.mp4",
       "poster_url": "/videos/wordpressDockerisedPoster.jpg",
@@ -126,16 +121,12 @@
         {
           "name": "Nginx",
           "icon": "/images/nginx.svg"
-        },
-        {
-          "name": "PHP",
-          "icon": "/images/php.svg"
         }
       ]
     },
     {
       "name": "Pytatki",
-      "description": "School notes manager web app. I’m not hosting this project anywhere, but it can be run locally. Create notes and edit them in real time with others. Project was archived because I decided to focus on React and at that moment I lacked time.",
+      "description": "School notes manager web app. I’m not hosting this project anywhere, but it can be run locally. Create notes and edit them in real time with others.",
       "github": "https://github.com/filipw01/pytatki",
       "link": "https://pytatki.netlify.app/",
       "video_url": "/videos/sample.mp4",
@@ -167,8 +158,8 @@
       "company_url": "https://blueowl.pl/",
       "position": "Web Developer",
       "startDate": "July 2018",
-      "endDate": "Present",
-      "description": "My job was mainly about creating custom WordPress themes, but because of my passion for modern web I managed to improve the development process with Docker (see my projects) and was given an opportunity to rewrite Blue Owl website from scratch with Gatsby (it is not available yet). I decided to leave Blue Owl because I am passionate about Front-end and I want to have more opportunities to work with modern high quality JavaScript.",
+      "endDate": "September 2020",
+      "description": "My job was mainly about creating custom WordPress themes. I improved development process with Docker (see my projects). I've rewritten Blue Owl website from scratch using Gatsby (blueowl.pl). I left Blue Owl because I wanted to work closer to my tech stack.",
       "technologies": [
         {
           "name": "Wordpress",
@@ -186,27 +177,35 @@
           "name": "Docker",
           "icon": "/images/docker.svg"
         }
-      ],
-      "testimonials": [
+      ]
+    },
+    {
+      "name": "Codility",
+      "logo": "/images/codility.webp",
+      "company_url": "https://codility.com",
+      "position": "Task Creator",
+      "startDate": "August 2020",
+      "endDate": "Present",
+      "description": "I'm creating recruitment task for aspiring software developers. I was able to create many tasks involving both frontend and backend JavaScript, CSS, HTML and Python. My job involves developing task ideas, solutions and tests. Docker is a crucial part of my work.",
+      "technologies": [
         {
-          "image": "/images/Krzysztof.jpg",
-          "name": "Krzysztof Stola",
-          "position": "CEO / Head of Design",
-          "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Habitant diam nullam sit habitasse. Porttitor cursus gravida semper nisl, scelerisque suspendisse sit. Augue ipsum venenatis adipiscing cras."
+          "name": "JavaScript",
+          "icon": "/images/js.svg"
         },
         {
-          "image": "/images/Marek.jpg",
-          "name": "Marek Krupniewski",
-          "position": "Developer",
-          "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Habitant diam nullam sit habitasse. Porttitor cursus gravida semper nisl. A, neque in massa tellus. Enim eget feugiat placerat aliquam platea. "
+          "name": "React",
+          "icon": "/images/react.svg"
         },
         {
-          "image": "/images/Filip.jpg",
-          "name": "Jacek Śledziński",
-          "position": "CFO",
-          "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Habitant diam nullam sit habitasse. Porttitor cursus gravida semper nisl, scelerisque suspendisse sit. Augue ipsum venenatis adipiscing cras. A, neque in massa tellus. Enim eget feugiat placerat aliquam platea. "
+          "name": "CSS",
+          "icon": "/images/css.svg"
+        },
+        {
+          "name": "Python",
+          "icon": "/images/python.svg"
         }
       ]
     }
-  ]
+  ],
+  "references": []
 }

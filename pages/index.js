@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef } from "react";
 import Head from "next/head";
 import Navigation from "../components/Navigation";
 import HeroSection from "../components/sections/HeroSection";
@@ -9,7 +9,6 @@ import TearDown from "../components/TearDown";
 import TearUp from "../components/TearUp";
 import Container from "../components/base/Container";
 import { useElementBoundingRect } from "../hooks/useElementBoundingRect";
-import ReactGA from "react-ga";
 
 export default function Home(props) {
   const about = useRef(null);
@@ -21,12 +20,6 @@ export default function Home(props) {
     boundingRect,
     recalculateRect,
   } = useElementBoundingRect(() => setTearBoundingRect(boundingRect.current));
-
-  useEffect(() => {
-    ReactGA.initialize("UA-169307383-1");
-    ReactGA.set({ page: window.location.pathname });
-    ReactGA.pageview(window.location.pathname);
-  }, []);
 
   return (
     <div>
@@ -47,12 +40,12 @@ export default function Home(props) {
         <meta
           name="description"
           content="Filip Wachowiak portfolio website with quick overview of skills, projects and work experience."
-        ></meta>
+        />
       </Head>
       <Navigation
         navigationElements={[
           { name: "About me", ref: about.current },
-          { name: "Personal projects", ref: project.current },
+          { name: "Projects", ref: project.current },
           { name: "Work experience", ref: work.current },
         ]}
       />
@@ -78,12 +71,12 @@ export default function Home(props) {
             <WorkSection work={props.work} />
           </Container>
         </TearUp>
-        <div ref={work}></div>
+        <div ref={work} />
       </main>
 
       <footer className="relative z-10 bg-seashell">
         <Container>
-          <div className="flex flex-wrap justify-center py-16 text-xl"></div>
+          <div className="flex flex-wrap justify-center py-16 text-xl" />
         </Container>
       </footer>
     </div>
