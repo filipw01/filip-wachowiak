@@ -1,6 +1,5 @@
-import React, { useState, useRef, useEffect, createRef } from "react";
+import React from "react";
 import BaseHeading from "./base/BaseHeading";
-import { useElementBoundingRect } from "../hooks/useElementBoundingRect";
 
 export default function Work({
   name,

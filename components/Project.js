@@ -1,6 +1,5 @@
-import React, { useState } from "react";
+import React from "react";
 import BaseHeading from "./base/BaseHeading";
-import { useElementBoundingRect } from "../hooks/useElementBoundingRect";
 
 export default function Project({
   video,
@@ -11,17 +10,8 @@ export default function Project({
   github,
   link,
 }) {
-  const [descriptionHeight, setDescriptionHeight] = useState(0);
-  const { elementRef, boundingRect } = useElementBoundingRect(() =>
-    setDescriptionHeight(boundingRect.current.height)
-  );
   return (
-    <div
-      className="flex items-center project"
-      style={{
-        marginBottom: `${descriptionHeight / 2}px`,
-      }}
-    >
+    <div className="flex items-center project mb-20">
       <div className="flex-shrink-0">
         {technologies.map((technology) => (
           <img
@@ -42,10 +32,7 @@ export default function Project({
           loop
         />
         <div className="inset-x-0 bottom-0 transform sm:translate-y-1/2 sm:absolute">
-          <div
-            className="px-8 pt-6 pb-8 mx-auto bg-white shadow-lg xl:w-5/6 lg:w-3/4 sm:w-5/6"
-            ref={elementRef}
-          >
+          <div className="px-8 pt-6 pb-8 mx-auto bg-white shadow-lg xl:w-5/6 lg:w-3/4 sm:w-5/6">
             <div className="flex items-center justify-between">
               <BaseHeading level={4}>{name}</BaseHeading>
               <div className="flex flex-shrink-0">
