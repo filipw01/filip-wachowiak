@@ -155,7 +155,7 @@
       "position": "Web Developer",
       "startDate": "July 2018",
       "endDate": "November 2020",
-      "description": "My job was mainly about creating custom WordPress themes. I improved development process with Docker (see my projects). I've rewritten Blue Owl website from scratch using Gatsby (blueowl.pl). I left Blue Owl because I wanted to work closer to my tech stack.",
+      "description": "My job was mainly about creating custom WordPress themes. I improved the development process with Docker (see my projects). I've rewritten the Blue Owl website from scratch using Gatsby (blueowl.pl). I left Blue Owl because I wanted to work closer to my tech stack.",
       "technologies": [
         {
           "name": "Wordpress",
@@ -182,7 +182,7 @@
       "position": "Task Creator",
       "startDate": "August 2020",
       "endDate": "Present",
-      "description": "I'm creating recruitment task for aspiring software developers. I was able to create many tasks involving both frontend and backend JavaScript, CSS, HTML and Python. My job involves developing task ideas, solutions and tests. Docker is a crucial part of my work.",
+      "description": "I'm creating recruitment tasks for aspiring software developers. I was able to create many tasks involving both frontend and backend JavaScript, CSS, HTML and Python. My job involves developing task ideas, solutions and tests. Docker is a crucial part of my work.",
       "technologies": [
         {
           "name": "JavaScript",
