@@ -1,4 +1,7 @@
+/** @type {import('tailwindcss').Config} */
 module.exports = {
+  content: ["./components/**/*.tsx", "./pages/**/*.tsx"],
+  plugins: [],
   theme: {
     fontFamily: {
       display: "Playfair Display",

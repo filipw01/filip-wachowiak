@@ -1,11 +1,10 @@
-/* purgecss start ignore */
 @tailwind base;
 @tailwind components;
+@tailwind utilities;
+
 body {
   @apply bg-seashell;
 }
-/* purgecss end ignore */
-@tailwind utilities;
 
 @font-face {
   font-family: "Playfair Display";
@@ -13,12 +12,14 @@ body {
   src: url("../public/fonts/PlayfairDisplay-Regular.ttf") format("truetype");
   font-display: fallback;
 }
+
 @font-face {
   font-family: "Open Sans";
   font-weight: 300;
   src: url("../public/fonts/OpenSans-Light.ttf") format("truetype");
   font-display: fallback;
 }
+
 @font-face {
   font-family: "Open Sans";
   font-weight: 300;
@@ -26,6 +27,7 @@ body {
   src: url("../public/fonts/OpenSans-LightItalic.ttf") format("truetype");
   font-display: fallback;
 }
+
 @font-face {
   font-family: "Open Sans";
   font-weight: 400;
