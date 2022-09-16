@@ -9,40 +9,32 @@ type Props = {
 
 export default function WorkSection({ work }: Props) {
   return (
-    <div className="">
-      <BaseHeading className="mb-16 text-center">Work experience</BaseHeading>
-      <div
-        style={{
-          gridTemplateColumns: "repeat(auto-fit, minmax(20rem, 34rem))",
-        }}
-        className="grid gap-8 justify-center"
-      >
+    <div className="max-w-4xl mx-auto">
+      <BaseHeading className="mb-16 text-center">
+        Professional experience
+      </BaseHeading>
+      <div className="work-section-grid sm:grid gap-8 items-start">
         {work.map((job) => {
-          const {
-            name,
-            logo,
-            position,
-            startDate,
-            endDate,
-            description,
-            technologies,
-            company_url,
-          } = job;
-          return (
-            <WorkComponent
-              key={name}
-              name={name}
-              logo={logo}
-              company_url={company_url}
-              position={position}
-              startDate={startDate}
-              endDate={endDate}
-              description={description}
-              technologies={technologies}
-            />
-          );
+          return <WorkComponent key={job.name} {...job} />;
         })}
       </div>
+      <style jsx>{`
+        @media (max-width: 639px) {
+          .work-section-grid > :global(*:nth-child(odd)) {
+            margin-top: 24px;
+          }
+
+          .work-section-grid > :global(*:nth-child(even)) {
+            margin-bottom: 24px;
+          }
+        }
+
+        @media (min-width: 640px) {
+          .work-section-grid {
+            grid-template-columns: 185px 1fr;
+          }
+        }
+      `}</style>
     </div>
   );
 }

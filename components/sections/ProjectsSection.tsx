@@ -5,37 +5,42 @@ import { Project } from "../../pages";
 
 type Props = {
   projects: Project[];
+  professionalProjects: Project[];
 };
 
-export default function ProjectsSection({ projects }: Props) {
+export default function ProjectsSection({
+  projects,
+  professionalProjects,
+}: Props) {
   return (
     <div>
-      <BaseHeading className="mb-16 text-center">Personal projects</BaseHeading>
-      <div className="grid items-start grid-cols-1 gap-12 xl:grid-cols-2">
-        {projects.map((project) => {
-          const {
-            video_url,
-            poster_url,
-            name,
-            description,
-            technologies,
-            github,
-            link,
-          } = project;
-          return (
-            <ProjectComponent
-              key={name}
-              video={video_url}
-              poster={poster_url}
-              name={name}
-              description={description}
-              technologies={technologies}
-              github={github}
-              link={link}
-            />
-          );
-        })}
-      </div>
+      <SingleSection
+        className="mb-12"
+        title="Professional Projects"
+        projects={professionalProjects}
+      />
+      <SingleSection title="Personal Projects" projects={projects} />
     </div>
   );
 }
+
+const SingleSection = ({
+  title,
+  projects,
+  className,
+}: {
+  title: string;
+  projects: Project[];
+  className?: string;
+}) => {
+  return (
+    <div className={className}>
+      <BaseHeading className="mb-16 text-center">{title}</BaseHeading>
+      <div className="grid items-start grid-cols-1 gap-12 xl:grid-cols-2">
+        {projects.map((project) => (
+          <ProjectComponent key={project.name} {...project} />
+        ))}
+      </div>
+    </div>
+  );
+};

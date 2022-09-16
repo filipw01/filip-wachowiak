@@ -4,10 +4,16 @@ type Props = {
   children: React.ReactNode;
   className?: string;
   level?: 1 | 2 | 3 | 4 | 5 | 6;
+  as?: keyof JSX.IntrinsicElements;
 };
 
-export default function BaseHeading({ children, level = 2, className }: Props) {
-  const Heading = `h${level}` as keyof JSX.IntrinsicElements;
+export default function BaseHeading({
+  children,
+  level = 2,
+  className,
+  as,
+}: Props) {
+  const Heading: keyof JSX.IntrinsicElements = as ?? `h${level}`;
   let css = `leading-tight ${className} `;
   switch (Number(level)) {
     case 1:

@@ -56,7 +56,6 @@ export default function Navigation({ navigationElements }: Props) {
                     }
                     navigationElement.ref.current.scrollIntoView({
                       behavior: "smooth",
-                      block: "center",
                     });
                     setMenuOpen(false);
                   }}

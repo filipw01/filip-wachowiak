@@ -13,30 +13,18 @@ export default function HeroSection({ nextSectionRef }: Props) {
       <div className="flex flex-col items-center justify-center py-20 mb-16 md:min-h-screen md:flex-row sm:mb-0">
         <div className="w-full mb-4 md:w-1/3 md:mb-0">
           <div>
-            <picture className="w-full md:hidden sm:w-3/4" draggable="false">
-              <source
-                srcSet="/images/FilipMobileLow.webp 500w, /images/FilipMobile.webp 1.3x"
-                type="image/webp"
-              />
-              <source srcSet="/images/FilipMobileLow.jpg 500w, /images/FilipMobile.jpg 1.3x" />
-              <img
-                src="/images/FilipMobile.jpg"
-                alt="Filip Wachowiak"
-                draggable="false"
-              />
-            </picture>
-            <picture className="hidden w-full mb-0 md:block" draggable="false">
-              <source
-                srcSet="/images/FilipLow.webp 1300w, /images/Filip.webp 1.3x"
-                type="image/webp"
-              />
-              <source srcSet="/images/FilipLow.jpg 1300w, /images/Filip.jpg 1.3x" />
-              <img
-                src="/images/Filip.jpg"
-                alt="Filip Wachowiak"
-                draggable="false"
-              />
-            </picture>
+            <img
+              src="/images/Filip.webp"
+              alt=""
+              className="w-full md:hidden"
+              draggable="false"
+            />
+            <img
+              src="/images/FilipVertical.webp"
+              alt=""
+              className="hidden w-full mb-0 md:block"
+              draggable="false"
+            />
           </div>
         </div>
 
@@ -45,11 +33,13 @@ export default function HeroSection({ nextSectionRef }: Props) {
             <div className="text-xl font-light lg:text-3xl font-body text-gray">
               My name is Filip Wachowiak
             </div>
-            I'm a Full Stack JavaScript passionate
+            Loving Frontend,
+            <br />
+            learning Rust
           </BaseHeading>
           <p className="mt-4 text-sm lg:text-lg sm:text-md">
-            I specialize in React but I also love Python and Rust. I believe
-            that broad knowledge makes you a better software developer.
+            I like challenges and solving the impossible problems. Manageable
+            and readable code is the first step to a great UX
           </p>
           <BaseButton
             className="mt-6"
@@ -59,7 +49,6 @@ export default function HeroSection({ nextSectionRef }: Props) {
               }
               nextSectionRef.current.scrollIntoView({
                 behavior: "smooth",
-                block: "center",
               });
             }}
           >

@@ -1,19 +1,11 @@
 import React from "react";
 import BaseHeading from "./base/BaseHeading";
+import { Project as ProjectType } from "../pages";
 
-type Props = {
-  video: string;
-  poster: string;
-  name: string;
-  description: string;
-  technologies: { name: string; icon: string }[];
-  github: string;
-  link: string;
-};
+type Props = ProjectType;
 
 export default function Project({
-  video,
-  poster,
+  image,
   name,
   description,
   technologies,
@@ -21,30 +13,24 @@ export default function Project({
   link,
 }: Props) {
   return (
-    <div className="flex items-center project mb-20">
+    <div className="flex items-center mb-20">
       <div className="flex-shrink-0">
-        {technologies.map((technology) => (
+        {technologies.map(({ icon, name }) => (
           <img
-            key={technology.name}
-            className="block w-6 my-6 mr-4 sm:w-8 sm:my-8 sm:mr-10 grayscale"
-            src={technology.icon}
-            alt={technology.name}
+            key={name}
+            className="block w-6 my-6 mr-4 sm:w-8 sm:my-8 sm:mr-10"
+            src={icon}
+            alt={name}
+            title={name}
           />
         ))}
       </div>
       <div className="relative flex-grow">
-        <video
-          className="w-full"
-          src={video}
-          poster={poster}
-          autoPlay
-          muted
-          loop
-        />
+        <img src={image} alt="" className="project-image w-full" />
         <div className="inset-x-0 bottom-0 transform sm:translate-y-1/2 sm:absolute">
           <div className="px-8 pt-6 pb-8 mx-auto bg-white shadow-lg xl:w-5/6 lg:w-3/4 sm:w-5/6">
             <div className="flex items-center justify-between">
-              <BaseHeading level={4}>{name}</BaseHeading>
+              <BaseHeading level={5}>{name}</BaseHeading>
               <div className="flex flex-shrink-0">
                 {link && (
                   <a
@@ -82,23 +68,13 @@ export default function Project({
       </div>
       <style jsx>
         {`
-          .grayscale {
-            filter: grayscale(1);
-          }
-
-          video {
+          .project-image {
             border: 0.5rem solid #9c2e2e;
           }
 
           @media (min-width: 640px) {
-            video {
+            .project-image {
               border-width: 1.5rem;
-            }
-          }
-
-          @media (max-width: 639px) {
-            .project {
-              margin-bottom: 2rem !important;
             }
           }
         `}

@@ -1,14 +1,12 @@
 import React from "react";
 import BaseHeading from "./base/BaseHeading";
+import { Work as WorkType } from "../pages";
 
 type Props = {
   name: string;
   company_url: string;
   logo: string;
-  position: string;
-  startDate: string;
-  description: string;
-  endDate?: string;
+  position: WorkType["position"];
   technologies: { icon: string; name: string }[];
 };
 
@@ -17,115 +15,95 @@ export default function Work({
   company_url,
   logo,
   position,
-  startDate,
-  endDate,
-  description,
   technologies,
 }: Props) {
+  const start = position[position.length - 1].start;
+  const end = position[0].end;
   return (
-    <div className="px-6 py-6 bg-white shadow-lg sm:pb-16 sm:pt-12 sm:px-12 xl:px-20">
-      <div className="flex flex-col md:flex-row">
-        <div className="w-full">
-          <div className="flex flex-col items-center text-center">
-            <div>
-              <a
-                className="self-center block mb-4"
-                href={company_url}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <img className="mx-auto h-8" src={logo} alt={name} />
-              </a>
-              <BaseHeading className="font-normal" level={3}>
-                {position}
-              </BaseHeading>
-              <p className="mt-1 mb-6 text-xl font-normal uppercase lg:text-2xl">
-                {startDate} - {endDate}
-              </p>
-            </div>
-          </div>
-          <p className="text-sm lg:text-md">{description}</p>
-          <div className="flex justify-center mt-6">
-            {technologies.map((technology) => (
+    <>
+      <div className="py-6 flex sm:flex-col gap-x-4 gap-y-2 sm:gap-0 justify-between flex-wrap">
+        <a
+          className="block sm:mb-4 w-48"
+          href={company_url}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            className="max-w-full max-h-10"
+            src={logo}
+            alt={`${name} logo`}
+          />
+        </a>
+        <div>
+          <p className="text-md font-normal uppercase lg:text-lg">
+            {dateToYearMonth(start)} - {dateToYearMonth(end)}
+          </p>
+          <p className="sm:mb-2 text-gray">({timeElapsed(start, end)})</p>
+        </div>
+        <div>
+          <p className="mb-2">Technologies:</p>
+          <div className="flex gap-4 flex-wrap justify-start">
+            {technologies.map(({ icon, name }) => (
               <img
-                key={technology.name}
-                className="block h-8 mx-4 lg:mx-6 lg:h-10"
-                src={technology.icon}
-                alt={technology.name}
+                key={name}
+                className="block h-6"
+                src={icon}
+                alt={name}
+                title={name}
               />
             ))}
           </div>
         </div>
-        <div className="relative hidden w-full mt-12 text-center md:mt-0 md:ml-4 md:w-1/2 lg:ml-10">
-          <div className="flex justify-between text-sm">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              version="1.1"
-              className="w-0 h-0"
-            >
-              <filter id="fancy-goo">
-                <feGaussianBlur
-                  in="SourceGraphic"
-                  stdDeviation="10"
-                  result="blur"
-                />
-                <feColorMatrix
-                  in="blur"
-                  type="matrix"
-                  values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9"
-                  result="goo"
-                />
-                <feComposite in="SourceGraphic" in2="goo" operator="atop" />
-              </filter>
-            </svg>
-          </div>
-        </div>
       </div>
-      <style jsx>{`
-        .goo-filter {
-          filter: url("#fancy-goo");
-        }
 
-        .goo-big-rect {
-          top: 160px;
-        }
-
-        @media (min-width: 390px) {
-          .goo-big-rect {
-            top: 140px;
-          }
-        }
-
-        @media (min-width: 460px) {
-          .goo-big-rect {
-            top: 125px;
-          }
-        }
-
-        @media (min-width: 640px) {
-          .goo-big-rect {
-            top: 200px;
-          }
-        }
-
-        @media (min-width: 768px) {
-          .goo-big-rect {
-            top: 190px;
-          }
-        }
-
-        @media (min-width: 1024px) {
-          .goo-big-rect {
-            top: 190px;
-          }
-        }
-
-        @media (min-width: 1265px) {
-          .goo-big-rect {
-            top: 220px;
-          }
-        }
-      `}</style>
-    </div>
+      <div className="p-6 sm:px-10 bg-white shadow-lg flex flex-col gap-4">
+        {position.map(({ description, end, name, start }) => {
+          return (
+            <div key={name}>
+              <BaseHeading level={5} className="mb-1">
+                {name}
+              </BaseHeading>
+              <p className="text-gray mb-1">
+                {dateToYearMonth(start)} - {dateToYearMonth(end)} (
+                {timeElapsed(start, end)})
+              </p>
+              <p className="text-md lg:text-md">{description}</p>
+            </div>
+          );
+        })}
+      </div>
+    </>
   );
 }
+
+const yearMonthStringToDate = (date: string) => {
+  if (date === "Present") {
+    return new Date();
+  }
+  return new Date(`${date}-01T00:00:00`);
+};
+
+const timeElapsed = (start: string, end: string) => {
+  const startDate = yearMonthStringToDate(start);
+  const endDate = yearMonthStringToDate(end);
+  const timeDiff = endDate.getTime() - startDate.getTime();
+  const monthsDiff = Math.ceil(timeDiff / (1000 * 3600 * 24 * 30));
+  if (monthsDiff < 12) {
+    return `${monthsDiff} months`;
+  }
+  const yearsDiff = Math.floor(monthsDiff / 12);
+  const monthsLeft = monthsDiff % 12;
+  const yearsString = yearsDiff === 1 ? "year" : "years";
+  const monthsString = monthsLeft === 1 ? "month" : "months";
+  if (monthsLeft === 0) {
+    return `${yearsDiff} ${yearsString}`;
+  }
+  return `${yearsDiff} ${yearsString} ${monthsLeft} ${monthsString}`;
+};
+
+const dateToYearMonth = (date: string) => {
+  if (date === "Present") return date;
+  const d = yearMonthStringToDate(date);
+  const shortMonthName = d.toLocaleString("default", { month: "short" });
+  return `${shortMonthName} ${d.getFullYear()}`;
+};

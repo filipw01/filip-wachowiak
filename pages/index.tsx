@@ -14,13 +14,12 @@ export type Technology = {
   icon: string;
 };
 
-export type Skill = { name: string; level: string; content: string };
+export type Skill = { name: string; level?: string; content: string };
 
-export type Language = { name: string; level: string };
+export type Language = { name: string; level: string; code: string };
 
 export type Project = {
-  video_url: string;
-  poster_url: string;
+  image: string;
   name: string;
   description: string;
   technologies: Technology[];
@@ -31,10 +30,12 @@ export type Project = {
 export type Work = {
   name: string;
   logo: string;
-  position: string;
-  startDate: string;
-  endDate: string;
-  description: string;
+  position: {
+    name: string;
+    start: string;
+    end: string;
+    description: string;
+  }[];
   technologies: Technology[];
   company_url: string;
 };
@@ -44,6 +45,9 @@ type Props = {
   languages: Language[];
   projects: Project[];
   work: Work[];
+  limitedLanguages: string[];
+  learningLanguages: string[];
+  professionalProjects: Project[];
 };
 
 export default function Home(props: Props) {
@@ -79,7 +83,7 @@ export default function Home(props: Props) {
           { name: "Work experience", ref: work },
         ]}
       />
-      <main className="overflow-hidden font-light font-body">
+      <main className="font-light font-body">
         <TearDown>
           <HeroSection nextSectionRef={about} />
           <AboutSection
@@ -90,32 +94,29 @@ export default function Home(props: Props) {
         </TearDown>
         <div className="pt-48 pb-64 -my-32 bg-white ">
           <Container ref={project}>
-            <ProjectsSection projects={props.projects} />
+            <ProjectsSection
+              projects={props.projects}
+              professionalProjects={props.professionalProjects}
+            />
           </Container>
         </div>
         <TearUp>
-          <Container className="pt-16">
+          <Container ref={work} className="pt-16">
             <WorkSection work={props.work} />
           </Container>
+          <div className="h-32" />
         </TearUp>
-        <div ref={work} />
       </main>
-
-      <footer className="relative z-10 bg-seashell">
-        <Container>
-          <div className="flex flex-wrap justify-center py-16 text-xl" />
-        </Container>
-      </footer>
     </div>
   );
 }
 
 export async function getStaticProps() {
-  const { skills, languages, projects, work } = await import(
-    `../data/config.json`
-  );
+  const { skills, languages, projects, professionalProjects, work } =
+    await import(`../data/config.json`);
   return {
     props: {
+      professionalProjects,
       skills,
       languages,
       projects,

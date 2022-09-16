@@ -1,88 +1,90 @@
 {
   "skills": [
     {
-      "name": "JavaScript",
+      "name": "TypeScript",
       "level": "advanced",
-      "content": "Most of my experience is React, Styled Components, Node.js and TypeScript"
+      "content": "I'm very comfortable using it and writing mapping and filtering types, generics, conditionals etc. I'm not (yet) an expert, but I strive to be one"
     },
     {
       "name": "HTML/CSS",
       "level": "advanced",
-      "content": "I use semantic HTML with grid/flex layouts"
+      "content": "I write semantic HTML and I'm up to date with the latest CSS features (just waiting for the users to upgrade their browsers 😄)"
     },
     {
-      "name": "Python",
-      "level": "intermediate",
-      "content": "It isn't my daily driver but I know quite a lot"
+      "name": "React",
+      "level": "advanced",
+      "content": "I'm a daily user and that's my go to framework when I want to do something fast because I know it"
+    },
+    {
+      "name": "Code Reviews",
+      "content": "I like giving and getting feedback fast, it let's the team minimize context switching and deliver faster"
     },
     {
       "name": "Rust",
       "level": "beginner",
-      "content": "My dream job includes Rust. I want to be a better Rustacean"
-    },
-    {
-      "name": "Serverless",
-      "level": "beginner",
-      "content": "I've built AWS Lambda based GraphQL API using Apollo"
-    },
-    {
-      "name": "UI/UX Design",
-      "level": "beginner",
-      "content": "I want to develop delightful interfaces so read a lot and designed some thing"
+      "content": "I know some basics, did last year's advent of code in Rust and Python. I want to be a better Rustacean"
     }
   ],
   "languages": [
     {
       "name": "Polish",
-      "level": "C2"
+      "level": "C2",
+      "code": "pl"
     },
     {
       "name": "English",
-      "level": "B2/C1"
-    },
-    {
-      "name": "German",
-      "level": "B1"
-    },
-    {
-      "name": "Italian",
-      "level": "A2"
+      "level": "C1",
+      "code": "us"
     }
   ],
   "projects": [
     {
-      "name": "Dives",
-      "description": "Expense tracker - Serverless GraphQL API with mobile Flutter app and React webapp.",
-      "github": "https://github.com/dives-app",
-      "link": "https://dives-txvot44owa-ez.a.run.app",
-      "video_url": "/videos/sample.mp4",
-      "poster_url": "/videos/divesPoster.jpg",
+      "name": "Fiszki",
+      "description": "Flashcards app - focused on calendar, the better it goes with a flashcard, the less often it will be shown. Actively used, but without auth so I won't disclose the URL. Flashcards are stored in Google Sheets",
+      "github": "https://github.com/filipw01/fiszki",
+      "image": "/images/fiszki.webp",
       "technologies": [
         {
           "name": "TypeScript",
           "icon": "/images/typescript.svg"
         },
         {
-          "name": "PostgreSQL",
-          "icon": "/images/PostgreSQL.svg"
+          "name": "React",
+          "icon": "/images/react.svg"
         },
         {
-          "name": "Apollo",
-          "icon": "/images/apollo.svg"
+          "name": "Remix",
+          "icon": "/images/remix.svg"
+        }
+      ]
+    },
+    {
+      "name": "Dives",
+      "description": "Expense tracker - I designed it, created basic backend and started frontend but didn't have much time to develop it so at this point I think this project is dead",
+      "github": "https://github.com/dives-app",
+      "link": "https://dives-txvot44owa-ez.a.run.app",
+      "image": "/images/dives.jpg",
+      "technologies": [
+        {
+          "name": "TypeScript",
+          "icon": "/images/typescript.svg"
         },
         {
-          "name": "AWS Lambda",
-          "icon": "/images/lambda.svg"
+          "name": "React",
+          "icon": "/images/react.svg"
+        },
+        {
+          "name": "GraphQL",
+          "icon": "/images/graphql.svg"
         }
       ]
     },
     {
       "name": "Worlds Stats",
-      "description": "Gatsby page with League of Legends Worlds statistics. Data is fetched by custom web scraper and then exported as a JSON to generate the webpage.",
+      "description": "Gatsby page with League of Legends Worlds 2019 statistics. Data is fetched by custom web scraper and then exported as a JSON to generate the webpage.",
       "github": "https://github.com/filipw01/worldsstats",
-      "link": "https://worldsstats.netlify.com/",
-      "video_url": "/videos/sample.mp4",
-      "poster_url": "/videos/worldsStatsPoster.jpg",
+      "link": "https://worldsstats.netlify.com",
+      "image": "/images/worldsStats.jpg",
       "technologies": [
         {
           "name": "React.js",
@@ -99,12 +101,10 @@
       ]
     },
     {
-      "name": "Wordpress dockerized",
-      "description": "Docker-compose file for WordPress. It reduced compatibility issues when a developer needed to jump into someone else’s project.",
+      "name": "WordPress Dockerized",
+      "description": "Docker-compose file for WordPress. It streamlined bootstrap process for new project and reduced compatibility issues when a developer needed to jump into someone else’s project.",
       "github": "https://github.com/filipw01/wordpress-dockerized",
-      "link": "",
-      "video_url": "/videos/wordpressDockerised.mp4",
-      "poster_url": "/videos/wordpressDockerisedPoster.jpg",
+      "image": "/images/wordpressDockerized.jpg",
       "technologies": [
         {
           "name": "Docker",
@@ -115,74 +115,104 @@
           "icon": "/images/gnubash.svg"
         },
         {
-          "name": "Nginx",
-          "icon": "/images/nginx.svg"
+          "name": "WordPress",
+          "icon": "/images/wordpress.svg"
+        }
+      ]
+    }
+  ],
+  "professionalProjects": [
+    {
+      "name": "Chili Piper - Booking App",
+      "description": "Booking App let's you book a meeting with someone it can be customized in another app with many more features. Go ahead book a meeting with me if you're interested in working with me",
+      "link": "https://calendar.na.chilipiper.com/book/me/filip-wachowiak",
+      "image": "/images/chiliPiper.webp",
+      "technologies": [
+        {
+          "name": "TypeScript",
+          "icon": "/images/typescript.svg"
+        },
+        {
+          "name": "React",
+          "icon": "/images/react.svg"
+        },
+        {
+          "name": "Vite",
+          "icon": "/images/vite.svg"
         }
       ]
     },
     {
-      "name": "Pytatki",
-      "description": "School notes manager web app. I’m not hosting this project anywhere, but it can be run locally. Create notes and edit them in real time with others.",
-      "github": "https://github.com/filipw01/pytatki",
-      "link": "https://pytatki.netlify.app/",
-      "video_url": "/videos/sample.mp4",
-      "poster_url": "/videos/pytatkiPoster.jpg",
+      "name": "Blue Owl - Homepage",
+      "description": "Agency homepage, I was the only person building it and it hasn't changed almost at all since I've left. I like the WebGL effect on the hero owl image and gaps in red borders that are moving as you scroll",
+      "link": "https://blueowl.pl",
+      "image": "/images/blueowl.webp",
       "technologies": [
         {
-          "name": "Vue.js",
-          "icon": "/images/vue.svg"
+          "name": "React",
+          "icon": "/images/react.svg"
         },
         {
-          "name": "Express.js",
-          "icon": "/images/express.svg"
+          "name": "Gatsby",
+          "icon": "/images/gatsby.svg"
         },
         {
-          "name": "GraphQL",
-          "icon": "/images/graphql.svg"
-        },
-        {
-          "name": "MongoDB",
-          "icon": "/images/mongodb.svg"
+          "name": "WordPress",
+          "icon": "/images/wordpress.svg"
         }
       ]
     }
   ],
   "work": [
     {
-      "name": "Blue Owl",
-      "logo": "/images/blueowl.png",
-      "company_url": "https://blueowl.pl/",
-      "position": "Web Developer",
-      "startDate": "July 2018",
-      "endDate": "November 2020",
-      "description": "My job was mainly about creating custom WordPress themes. I improved the development process with Docker (see my projects). I've rewritten the Blue Owl website from scratch using Gatsby (blueowl.pl). I left Blue Owl because I wanted to work closer to my tech stack.",
+      "name": "Chili Piper",
+      "logo": "/images/chiliPiper.svg",
+      "company_url": "https://www.chilipiper.com/",
+      "position": [
+        {
+          "name": "Frontend Tech Lead",
+          "start": "2022-04",
+          "end": "Present",
+          "description": "I led a frontend team of 3 people. We developed a new product from scratch. I recognized and clearly documented lack of ownership in our design system and the issues it created. As a result I started leading a new team responsible for the design system improvements. It required close collaboration with designers while trying to deliver consistency and the best DX without sacrificing UX and accessibility"
+        },
+        {
+          "name": "Frontend Engineer",
+          "start": "2021-05",
+          "end": "2022-04",
+          "description": "I developed features for an existing, but unreleased product. Greatly improved tooling and DX for the frontend team. Migrated bundler from Webpack to Vite and visual regression testing from Percy to Chromatic (which saved us quite some money)."
+        }
+      ],
       "technologies": [
         {
-          "name": "Wordpress",
-          "icon": "/images/wordpress.svg"
+          "name": "TypeScript",
+          "icon": "/images/typescript.svg"
+        },
+        {
+          "name": "React",
+          "icon": "/images/react.svg"
         },
         {
           "name": "CSS",
           "icon": "/images/css.svg"
         },
         {
-          "name": "JavaScript",
-          "icon": "/images/js.svg"
-        },
-        {
-          "name": "Docker",
-          "icon": "/images/docker.svg"
+          "name": "Vite",
+          "icon": "/images/vite.svg"
         }
       ]
     },
     {
       "name": "Codility",
       "logo": "/images/codility.webp",
-      "company_url": "https://codility.com",
-      "position": "Task Creator",
-      "startDate": "August 2020",
-      "endDate": "Present",
-      "description": "I'm creating recruitment tasks for aspiring software developers. I was able to create many tasks involving both frontend and backend JavaScript, CSS, HTML and Python. My job involves developing task ideas, solutions and tests. Docker is a crucial part of my work.",
+      "company_url": "https://www.codility.com/",
+      "position": [
+        {
+          "name": "Task Creator",
+          "start": "2020-08",
+          "end": "2022-05",
+          "description": "I created over 20 recruitment tasks checking knowledge of JavaScript, React, TypeScript, CSS, HTML, Python and Rust. My job involved developing task ideas, creating description, both correct and wrong solutions and testing it to score appropriately. If you're using Codility there's a good chance you saw some tasks created by me"
+        }
+      ],
       "technologies": [
         {
           "name": "JavaScript",
@@ -199,6 +229,37 @@
         {
           "name": "Python",
           "icon": "/images/python.svg"
+        }
+      ]
+    },
+    {
+      "name": "Blue Owl",
+      "logo": "/images/blueowl.png",
+      "company_url": "https://blueowl.pl/",
+      "position": [
+        {
+          "name": "Web Developer",
+          "start": "2018-07",
+          "end": "2020-11",
+          "description": "I was mostly creating custom WordPress themes. I improved the process of bootstrapping and simplified sharing projects across machines with OS's a with Docker and rewritten the Blue Owl website from scratch using Gatsby while exposing WordPress as a CMS to the admins"
+        }
+      ],
+      "technologies": [
+        {
+          "name": "JavaScript",
+          "icon": "/images/js.svg"
+        },
+        {
+          "name": "WordPress",
+          "icon": "/images/wordpress.svg"
+        },
+        {
+          "name": "CSS",
+          "icon": "/images/css.svg"
+        },
+        {
+          "name": "Docker",
+          "icon": "/images/docker.svg"
         }
       ]
     }
