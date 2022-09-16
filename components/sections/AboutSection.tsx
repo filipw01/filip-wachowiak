@@ -57,7 +57,7 @@ const AboutSection = React.forwardRef<HTMLDivElement, Props>(
               Other languages
             </BaseHeading>
             <p>
-              I know some German, Italian, Spanish and I'm currently learning
+              I know some German, Italian, and Spanish. I'm currently learning
               Korean
             </p>
           </div>

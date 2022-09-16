@@ -38,8 +38,8 @@ export default function HeroSection({ nextSectionRef }: Props) {
             learning Rust
           </BaseHeading>
           <p className="mt-4 text-sm lg:text-lg sm:text-md">
-            I like challenges and solving the impossible problems. Manageable
-            and readable code is the first step to a great UX
+            I like challenges and solving impossible problems. Manageable and
+            readable code is the first step to a great UX
           </p>
           <BaseButton
             className="mt-6"

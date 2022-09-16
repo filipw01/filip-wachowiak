@@ -90,7 +90,7 @@ export default function Navigation({ navigationElements }: Props) {
                 </a>
                 <a
                   className="flex flex-col items-center my-2 ml-6 font-display"
-                  href="/FilipWachowiakResumeEng.pdf"
+                  href="/Resume.pdf"
                   download="Filip Wachowiak - resume"
                 >
                   <img
