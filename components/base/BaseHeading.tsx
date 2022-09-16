@@ -1,7 +1,13 @@
 import React from "react";
 
-export default function BaseHeading({ children, level = 2, className }) {
-  const Heading = `h${level}`;
+type Props = {
+  children: React.ReactNode;
+  className?: string;
+  level?: 1 | 2 | 3 | 4 | 5 | 6;
+};
+
+export default function BaseHeading({ children, level = 2, className }: Props) {
+  const Heading = `h${level}` as keyof JSX.IntrinsicElements;
   let css = `leading-tight ${className} `;
   switch (Number(level)) {
     case 1:

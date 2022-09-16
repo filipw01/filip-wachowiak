@@ -1,6 +1,10 @@
 import React from "react";
 
-export default function TearDown({ children }) {
+type Props = {
+  children: React.ReactNode;
+};
+
+export default function TearDown({ children }: Props) {
   return (
     <div className="tear-down-parent">
       <div className="pb-24 bg-seashell tear-down">{children}</div>
@@ -9,6 +13,7 @@ export default function TearDown({ children }) {
           .tear-down-parent {
             filter: drop-shadow(0px 1.5rem 1.5rem rgba(0, 0, 0, 0.1));
           }
+
           .tear-down {
             clip-path: polygon(
               0px 0px,

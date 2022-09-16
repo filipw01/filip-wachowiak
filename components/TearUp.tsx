@@ -1,14 +1,16 @@
 import React from "react";
 
-export default function TearUp({ children }) {
+type Props = {
+  children: React.ReactNode;
+};
+
+export default function TearUp({ children }: Props) {
   return (
     <div className="tear-up-parent">
       <div className="pt-24 bg-seashell tear-up">{children}</div>
       <style jsx>
         {`
           .tear-up-parent {
-            // Fix safari performance issue by creating new composition layer
-            transform: translateZ(0);
             filter: drop-shadow(0px -1.5rem 1.5rem rgba(0, 0, 0, 0.1));
           }
 

@@ -1,6 +1,16 @@
 import React from "react";
 import BaseHeading from "./base/BaseHeading";
 
+type Props = {
+  video: string;
+  poster: string;
+  name: string;
+  description: string;
+  technologies: { name: string; icon: string }[];
+  github: string;
+  link: string;
+};
+
 export default function Project({
   video,
   poster,
@@ -9,7 +19,7 @@ export default function Project({
   technologies,
   github,
   link,
-}) {
+}: Props) {
   return (
     <div className="flex items-center project mb-20">
       <div className="flex-shrink-0">

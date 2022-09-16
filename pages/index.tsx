@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useRef } from "react";
 import Head from "next/head";
 import Navigation from "../components/Navigation";
 import HeroSection from "../components/sections/HeroSection";
@@ -8,18 +8,48 @@ import WorkSection from "../components/sections/WorkSection";
 import TearDown from "../components/TearDown";
 import TearUp from "../components/TearUp";
 import Container from "../components/base/Container";
-import { useElementBoundingRect } from "../hooks/useElementBoundingRect";
 
-export default function Home(props) {
+export type Technology = {
+  name: string;
+  icon: string;
+};
+
+export type Skill = { name: string; level: string; content: string };
+
+export type Language = { name: string; level: string };
+
+export type Project = {
+  video_url: string;
+  poster_url: string;
+  name: string;
+  description: string;
+  technologies: Technology[];
+  github: string;
+  link: string;
+};
+
+export type Work = {
+  name: string;
+  logo: string;
+  position: string;
+  startDate: string;
+  endDate: string;
+  description: string;
+  technologies: Technology[];
+  company_url: string;
+};
+
+type Props = {
+  skills: Skill[];
+  languages: Language[];
+  projects: Project[];
+  work: Work[];
+};
+
+export default function Home(props: Props) {
   const about = useRef(null);
   const project = useRef(null);
   const work = useRef(null);
-  const [tearBoundingRect, setTearBoundingRect] = useState({ y: 0 });
-  const {
-    elementRef,
-    boundingRect,
-    recalculateRect,
-  } = useElementBoundingRect(() => setTearBoundingRect(boundingRect.current));
 
   return (
     <div>
@@ -44,29 +74,26 @@ export default function Home(props) {
       </Head>
       <Navigation
         navigationElements={[
-          { name: "About me", ref: about.current },
-          { name: "Projects", ref: project.current },
-          { name: "Work experience", ref: work.current },
+          { name: "About me", ref: about },
+          { name: "Projects", ref: project },
+          { name: "Work experience", ref: work },
         ]}
       />
       <main className="overflow-hidden font-light font-body">
         <TearDown>
-          <HeroSection nextSectionRef={about.current} />
+          <HeroSection nextSectionRef={about} />
           <AboutSection
             ref={about}
             skills={props.skills}
             languages={props.languages}
           />
         </TearDown>
-        <div className="pt-48 pb-64 -my-32 bg-white " ref={elementRef}>
+        <div className="pt-48 pb-64 -my-32 bg-white ">
           <Container ref={project}>
             <ProjectsSection projects={props.projects} />
           </Container>
         </div>
-        <TearUp
-          tearBoundingRect={tearBoundingRect}
-          recalculateRect={recalculateRect}
-        >
+        <TearUp>
           <Container className="pt-16">
             <WorkSection work={props.work} />
           </Container>

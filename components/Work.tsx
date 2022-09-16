@@ -1,6 +1,17 @@
 import React from "react";
 import BaseHeading from "./base/BaseHeading";
 
+type Props = {
+  name: string;
+  company_url: string;
+  logo: string;
+  position: string;
+  startDate: string;
+  description: string;
+  endDate?: string;
+  technologies: { icon: string; name: string }[];
+};
+
 export default function Work({
   name,
   company_url,
@@ -10,7 +21,7 @@ export default function Work({
   endDate,
   description,
   technologies,
-}) {
+}: Props) {
   return (
     <div className="px-6 py-6 bg-white shadow-lg sm:pb-16 sm:pt-12 sm:px-12 xl:px-20">
       <div className="flex flex-col md:flex-row">

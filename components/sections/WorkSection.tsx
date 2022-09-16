@@ -1,13 +1,20 @@
 import React from "react";
 import BaseHeading from "../base/BaseHeading";
-import Work from "../Work";
+import WorkComponent from "../Work";
+import { Work } from "../../pages";
 
-export default function WorkSection({ work }) {
+type Props = {
+  work: Work[];
+};
+
+export default function WorkSection({ work }: Props) {
   return (
     <div className="">
       <BaseHeading className="mb-16 text-center">Work experience</BaseHeading>
       <div
-        style={{ gridTemplateColumns: "repeat(auto-fit, minmax(20rem, 34rem))" }}
+        style={{
+          gridTemplateColumns: "repeat(auto-fit, minmax(20rem, 34rem))",
+        }}
         className="grid gap-8 justify-center"
       >
         {work.map((job) => {
@@ -22,7 +29,7 @@ export default function WorkSection({ work }) {
             company_url,
           } = job;
           return (
-            <Work
+            <WorkComponent
               key={name}
               name={name}
               logo={logo}

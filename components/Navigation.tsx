@@ -1,8 +1,12 @@
 import React, { useState } from "react";
-import Container from "./base/Container";
 import Headroom from "react-headroom";
+import Container from "./base/Container";
 
-export default function Navigation({ navigationElements }) {
+type Props = {
+  navigationElements: { name: string; ref: React.RefObject<HTMLElement> }[];
+};
+
+export default function Navigation({ navigationElements }: Props) {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
@@ -45,8 +49,14 @@ export default function Navigation({ navigationElements }) {
                   href=""
                   onClick={(e) => {
                     e.preventDefault();
-                    navigationElement.ref.scrollIntoView({
+                    if (!navigationElement.ref.current) {
+                      return console.error(
+                        `Ref is not set for ${navigationElement.name}`
+                      );
+                    }
+                    navigationElement.ref.current.scrollIntoView({
                       behavior: "smooth",
+                      block: "center",
                     });
                     setMenuOpen(false);
                   }}

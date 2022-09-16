@@ -1,8 +1,13 @@
 import React from "react";
 import BaseHeading from "../base/BaseHeading";
-import Project from "../Project";
+import ProjectComponent from "../Project";
+import { Project } from "../../pages";
 
-export default function ProjectsSection({ projects }) {
+type Props = {
+  projects: Project[];
+};
+
+export default function ProjectsSection({ projects }: Props) {
   return (
     <div>
       <BaseHeading className="mb-16 text-center">Personal projects</BaseHeading>
@@ -18,7 +23,7 @@ export default function ProjectsSection({ projects }) {
             link,
           } = project;
           return (
-            <Project
+            <ProjectComponent
               key={name}
               video={video_url}
               poster={poster_url}

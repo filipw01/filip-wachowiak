@@ -1,8 +1,13 @@
+import React from "react";
 import Container from "../base/Container";
 import BaseButton from "../base/BaseButton";
 import BaseHeading from "../base/BaseHeading";
 
-export default function HeroSection({ nextSectionRef }) {
+type Props = {
+  nextSectionRef: React.RefObject<HTMLDivElement>;
+};
+
+export default function HeroSection({ nextSectionRef }: Props) {
   return (
     <Container>
       <div className="flex flex-col items-center justify-center py-20 mb-16 md:min-h-screen md:flex-row sm:mb-0">
@@ -43,14 +48,20 @@ export default function HeroSection({ nextSectionRef }) {
             I'm a Full Stack JavaScript passionate
           </BaseHeading>
           <p className="mt-4 text-sm lg:text-lg sm:text-md">
-            I specialize in React but I also love Python and Rust.
-            I believe that broad knowledge makes you a better software developer.
+            I specialize in React but I also love Python and Rust. I believe
+            that broad knowledge makes you a better software developer.
           </p>
           <BaseButton
-            marginTop="6"
-            clickHandler={() =>
-              nextSectionRef.scrollIntoView({ behavior: "smooth" })
-            }
+            className="mt-6"
+            clickHandler={() => {
+              if (!nextSectionRef.current) {
+                return console.error(`nextSectionRef.current is null`);
+              }
+              nextSectionRef.current.scrollIntoView({
+                behavior: "smooth",
+                block: "center",
+              });
+            }}
           >
             Learn more about me
           </BaseButton>
