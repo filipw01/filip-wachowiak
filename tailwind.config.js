@@ -10,8 +10,7 @@ module.exports = {
     colors: {
       seashell: "#FFF3EB",
       red: "#9C2E2E",
-      gray: "#8E8E8E",
-      "light-gray": "#F7F7F7",
+      gray: "#707070",
       white: "#FFFFFF",
       black: "#1A1A1A",
     },

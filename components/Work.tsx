@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useId } from "react";
 import BaseHeading from "./base/BaseHeading";
 import { Work as WorkType } from "../pages";
 
@@ -17,10 +17,11 @@ export default function Work({
   position,
   technologies,
 }: Props) {
+  const id = useId();
   const start = position[position.length - 1].start;
   const end = position[0].end;
   return (
-    <>
+    <article className="contents" aria-labelledby={id}>
       <div className="py-6 flex sm:flex-col gap-x-4 gap-y-2 sm:gap-0 justify-between flex-wrap">
         <a
           className="block sm:mb-4 w-48"
@@ -31,6 +32,7 @@ export default function Work({
           <img
             className="max-w-full max-h-10"
             src={logo}
+            id={id}
             alt={`${name} logo`}
           />
         </a>
@@ -60,7 +62,7 @@ export default function Work({
         {position.map(({ description, end, name, start }) => {
           return (
             <div key={name}>
-              <BaseHeading level={5} className="mb-1">
+              <BaseHeading as="h3" level={5} className="mb-1">
                 {name}
               </BaseHeading>
               <p className="text-gray mb-1">
@@ -72,7 +74,7 @@ export default function Work({
           );
         })}
       </div>
-    </>
+    </article>
   );
 }
 

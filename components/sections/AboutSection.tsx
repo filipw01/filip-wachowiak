@@ -14,7 +14,7 @@ const AboutSection = React.forwardRef<HTMLDivElement, Props>(
       <BaseHeading className="mb-8 text-center md:mb-16">About me</BaseHeading>
       <div className="flex flex-col max-w-3xl mx-auto">
         <div>
-          <BaseHeading level={4} className="mb-6">
+          <BaseHeading as="h3" level={4} className="mb-6">
             Skills
           </BaseHeading>
           {skills.map((skill) => (
@@ -34,7 +34,7 @@ const AboutSection = React.forwardRef<HTMLDivElement, Props>(
         </div>
         <div className="flex gap-4 justify-between flex-wrap mt-6 w-full">
           <div className="max-w-xs">
-            <BaseHeading level={4} className="mb-4">
+            <BaseHeading as="h3" level={4} className="mb-4">
               Languages
             </BaseHeading>
             {languages.map((language) => (
@@ -53,7 +53,7 @@ const AboutSection = React.forwardRef<HTMLDivElement, Props>(
                 </BaseHeading>
               </div>
             ))}
-            <BaseHeading className="mt-6 mb-2" level={6}>
+            <BaseHeading as="h4" className="mt-6 mb-2" level={6}>
               Other languages
             </BaseHeading>
             <p>
@@ -62,7 +62,7 @@ const AboutSection = React.forwardRef<HTMLDivElement, Props>(
             </p>
           </div>
           <div>
-            <BaseHeading level={4} className="mb-4">
+            <BaseHeading as="h3" level={4} className="mb-4">
               Contact
             </BaseHeading>
             <div className="text-lg lg:text-xl">

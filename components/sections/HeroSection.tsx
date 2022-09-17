@@ -31,7 +31,7 @@ export default function HeroSection({ nextSectionRef }: Props) {
         <div className="md:w-2/3 md:ml-12">
           <BaseHeading level={1}>
             <div className="text-xl font-light lg:text-3xl font-body text-gray">
-              My name is Filip Wachowiak
+              I'm Filip Wachowiak
             </div>
             Loving Frontend,
             <br />

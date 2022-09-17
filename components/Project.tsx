@@ -30,7 +30,9 @@ export default function Project({
         <div className="inset-x-0 bottom-0 transform sm:translate-y-1/2 sm:absolute">
           <div className="px-8 pt-6 pb-8 mx-auto bg-white shadow-lg xl:w-5/6 lg:w-3/4 sm:w-5/6">
             <div className="flex items-center justify-between">
-              <BaseHeading level={5}>{name}</BaseHeading>
+              <BaseHeading as="h3" level={5}>
+                {name}
+              </BaseHeading>
               <div className="flex flex-shrink-0">
                 {link && (
                   <a
@@ -42,7 +44,7 @@ export default function Project({
                     <img
                       className="h-8 sm:w-8"
                       src="/images/link.svg"
-                      alt="see project"
+                      alt={`open ${name}`}
                     />
                   </a>
                 )}
@@ -56,7 +58,7 @@ export default function Project({
                     <img
                       className="h-8 sm:w-8"
                       src="/images/github.svg"
-                      alt="see on github"
+                      alt={`open ${name} on github`}
                     />
                   </a>
                 )}

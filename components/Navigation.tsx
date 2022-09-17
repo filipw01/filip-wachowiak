@@ -96,7 +96,7 @@ export default function Navigation({ navigationElements }: Props) {
                   <img
                     className="h-8 sm:w-8"
                     src="/images/resume.svg"
-                    alt="my github"
+                    alt="my resume"
                   />
                 </a>
               </div>
