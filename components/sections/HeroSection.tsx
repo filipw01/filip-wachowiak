@@ -9,17 +9,19 @@ type Props = {
 
 export default function HeroSection({ nextSectionRef }: Props) {
   return (
-    <Container>
-      <div className="flex flex-col items-center justify-center py-20 mb-16 md:min-h-screen md:flex-row sm:mb-0">
+    <Container className="md:max-w-screen-2xl">
+      <div className="flex flex-col md:items-center justify-center py-20 mb-16 md:min-h-screen md:flex-row sm:mb-0">
         <div className="w-full mb-4 md:w-1/3 md:mb-0">
           <div>
             <img
+              style={{ aspectRatio: "1496/1000" }}
               src="/images/Filip.webp"
               alt=""
               className="w-full md:hidden"
               draggable="false"
             />
             <img
+              style={{ aspectRatio: "1379/2000" }}
               src="/images/FilipVertical.webp"
               alt=""
               className="hidden w-full mb-0 md:block"
@@ -28,7 +30,7 @@ export default function HeroSection({ nextSectionRef }: Props) {
           </div>
         </div>
 
-        <div className="md:w-2/3 md:ml-12">
+        <div className="md:w-2/3 md:ml-12 md:max-w-lg">
           <BaseHeading level={1}>
             <div className="text-xl font-light lg:text-3xl font-body text-gray">
               I'm Filip Wachowiak
