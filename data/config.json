@@ -42,6 +42,7 @@
       "name": "Fiszki",
       "description": "Flashcards app - focused on the calendar; the better it goes with a flashcard, the less often it will be shown. Actively used, but without auth, so I won't disclose the URL. Flashcards are stored in Google Sheets",
       "github": "https://github.com/filipw01/fiszki",
+      "link": "https://fiszki.fly.dev",
       "image": "/images/fiszki.webp",
       "technologies": [
         {
