@@ -37,11 +37,11 @@ export default function HeroSection({ nextSectionRef }: Props) {
             </div>
             Loving Frontend,
             <br />
-            learning Rust
+            evolving products
           </BaseHeading>
           <p className="mt-4 text-sm lg:text-lg sm:text-md">
-            I like challenges and solving impossible problems. Manageable and
-            readable code is the first step to a great UX
+            I like challenges and solving impossible problems. Working in close
+            collaboration with my team and owning the product is important to me
           </p>
           <BaseButton
             className="mt-6"

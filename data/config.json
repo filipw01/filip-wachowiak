@@ -50,12 +50,12 @@
           "icon": "/images/typescript.svg"
         },
         {
-          "name": "React",
-          "icon": "/images/react.svg"
+          "name": "Solid",
+          "icon": "/images/solid.svg"
         },
         {
-          "name": "Remix",
-          "icon": "/images/remix.svg"
+          "name": "SolidStart",
+          "icon": "/images/solidStart.svg"
         }
       ]
     },
@@ -171,9 +171,15 @@
       "company_url": "https://www.chilipiper.com/",
       "position": [
         {
-          "name": "Frontend Tech Lead",
-          "start": "2022-04",
+          "name": "Staff Frontend Engineer",
+          "start": "2023-04",
           "end": "Present",
+          "description": "I helped deliver the beta of a chat product, took ownership of auth migration for Chili Piper apps, as well as continued maintaining the design system. To optimize our work I implemented automation of icons generation from Figma"
+        },
+        {
+          "name": "Senior Frontend Engineer",
+          "start": "2022-04",
+          "end": "2023-04",
           "description": "I led a frontend team of 3 people. We developed a new product from scratch. I recognized and documented the lack of ownership in our design system and the issues it created. As a result, I started leading a new team responsible for the design system improvements. It required close collaboration with designers while trying to deliver consistency and the best DX without sacrificing UX and accessibility"
         },
         {
