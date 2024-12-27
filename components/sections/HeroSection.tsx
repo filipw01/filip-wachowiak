@@ -4,10 +4,10 @@ import BaseButton from "../base/BaseButton";
 import BaseHeading from "../base/BaseHeading";
 
 type Props = {
-  nextSectionRef: React.RefObject<HTMLDivElement>;
+  nextSectionId: string;
 };
 
-export default function HeroSection({ nextSectionRef }: Props) {
+export default function HeroSection({ nextSectionId }: Props) {
   return (
     <Container className="md:max-w-screen-2xl">
       <div className="flex flex-col md:items-center justify-center py-20 mb-16 md:min-h-screen md:flex-row sm:mb-0">
@@ -46,10 +46,11 @@ export default function HeroSection({ nextSectionRef }: Props) {
           <BaseButton
             className="mt-6"
             clickHandler={() => {
-              if (!nextSectionRef.current) {
+              const nextSection = document.getElementById(nextSectionId);
+              if (!nextSection) {
                 return console.error(`nextSectionRef.current is null`);
               }
-              nextSectionRef.current.scrollIntoView({
+              nextSection.scrollIntoView({
                 behavior: "smooth",
               });
             }}

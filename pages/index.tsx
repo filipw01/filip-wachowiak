@@ -1,6 +1,5 @@
-import { useRef } from "react";
 import Head from "next/head";
-import Navigation from "../components/Navigation";
+import Navigation, { indexSections } from "../components/Navigation";
 import HeroSection from "../components/sections/HeroSection";
 import AboutSection from "../components/sections/AboutSection";
 import ProjectsSection from "../components/sections/ProjectsSection";
@@ -51,10 +50,6 @@ type Props = {
 };
 
 export default function Home(props: Props) {
-  const about = useRef(null);
-  const project = useRef(null);
-  const work = useRef(null);
-
   return (
     <div>
       <Head>
@@ -76,24 +71,18 @@ export default function Home(props: Props) {
           content="Filip Wachowiak portfolio website with quick overview of skills, projects and work experience."
         />
       </Head>
-      <Navigation
-        navigationElements={[
-          { name: "About me", ref: about },
-          { name: "Projects", ref: project },
-          { name: "Work experience", ref: work },
-        ]}
-      />
+      <Navigation />
       <main className="font-light font-body">
         <TearDown>
-          <HeroSection nextSectionRef={about} />
+          <HeroSection nextSectionId={indexSections.about} />
           <AboutSection
-            ref={about}
+            id={indexSections.about}
             skills={props.skills}
             languages={props.languages}
           />
         </TearDown>
-        <div className="pt-48 pb-64 -my-32 bg-white ">
-          <Container ref={project}>
+        <div className="pt-48 pb-64 -my-32 bg-white">
+          <Container id={indexSections.project}>
             <ProjectsSection
               projects={props.projects}
               professionalProjects={props.professionalProjects}
@@ -101,7 +90,7 @@ export default function Home(props: Props) {
           </Container>
         </div>
         <TearUp>
-          <Container ref={work} className="pt-16">
+          <Container id={indexSections.work} className="pt-16">
             <WorkSection work={props.work} />
           </Container>
           <div className="h-32" />

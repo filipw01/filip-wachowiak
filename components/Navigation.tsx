@@ -2,11 +2,20 @@ import React, { useState } from "react";
 import Headroom from "react-headroom";
 import Container from "./base/Container";
 
-type Props = {
-  navigationElements: { name: string; ref: React.RefObject<HTMLElement> }[];
+export const indexSections = {
+  about: "about",
+  project: "project",
+  work: "work",
 };
 
-export default function Navigation({ navigationElements }: Props) {
+const navigationElements = [
+  { name: "About me", id: indexSections.about, url: "/" },
+  { name: "Projects", id: indexSections.project, url: "/" },
+  { name: "Work experience", id: indexSections.work, url: "/" },
+  { name: "Blog", url: "/blog" },
+];
+
+export default function Navigation() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
@@ -30,7 +39,7 @@ export default function Navigation({ navigationElements }: Props) {
           </Container>
         </div>
         <div
-          className={`md:static absolute inset-x-0 transform pt-10 lg:pt-0 lg:translate-y-0 -translate-y-16 lg:transform-none lg:transform-none bg-seashell transition-transform duration-300 ease-out shadow-lg lg:shadow-none ${
+          className={`lg:static absolute inset-x-0 transform pt-10 lg:pt-0 lg:translate-y-0 -translate-y-16 lg:transform-none lg:transform-none bg-seashell transition-transform duration-300 ease-out shadow-lg lg:shadow-none ${
             menuOpen ? "" : "-translate-y-full"
           }`}
         >
@@ -46,18 +55,28 @@ export default function Navigation({ navigationElements }: Props) {
                 <a
                   key={navigationElement.name}
                   className="my-2 text-lg transition-colors lg:ml-12 font-display hover:text-red"
-                  href=""
+                  href={
+                    navigationElement.id
+                      ? `${navigationElement.url}#${navigationElement.id}`
+                      : navigationElement.url
+                  }
                   onClick={(e) => {
+                    if (window.location.pathname !== navigationElement.url) {
+                      return;
+                    }
                     e.preventDefault();
-                    if (!navigationElement.ref.current) {
+                    setMenuOpen(false);
+                    const nextSection = document.getElementById(
+                      navigationElement.id ?? ""
+                    );
+                    if (!nextSection) {
                       return console.error(
-                        `Ref is not set for ${navigationElement.name}`
+                        `nextSection is not set for ${navigationElement.name}`
                       );
                     }
-                    navigationElement.ref.current.scrollIntoView({
+                    nextSection.scrollIntoView({
                       behavior: "smooth",
                     });
-                    setMenuOpen(false);
                   }}
                 >
                   {navigationElement.name}
