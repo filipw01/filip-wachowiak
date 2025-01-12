@@ -34,3 +34,70 @@ body {
   src: url("../public/fonts/OpenSans-Regular.ttf") format("truetype");
   font-display: fallback;
 }
+
+.blog-post-page {
+  text-wrap: pretty;
+
+  h1 {
+    @apply text-4xl font-display font-bold text-center;
+  }
+}
+
+.blog-post-wrapper {
+  p {
+    @apply my-3;
+  }
+
+  a {
+    @apply text-red underline font-bold;
+  }
+
+  h2 {
+    @apply text-2xl font-display font-bold mt-7 mb-4;
+  }
+
+  figure {
+    @apply bg-lightSeashell rounded-lg overflow-hidden shadow-md my-4;
+  }
+
+  figcaption {
+    @apply text-sm italic m-3;
+  }
+
+  video {
+    @apply w-full max-w-screen-md mx-auto;
+  }
+
+  blockquote {
+    @apply bg-lightSeashell px-4 py-1 rounded-lg border-l-4 border-red;
+    
+    & cite {
+      @apply block text-sm italic my-3;
+    }
+  }
+
+  ul {
+    @apply list-disc list-inside my-4;
+  }
+
+  ol {
+    @apply list-decimal list-inside my-4;
+  }
+
+  pre {
+    @apply flex;
+
+    & code {
+      @apply whitespace-pre-wrap p-1;
+    }
+  }
+  
+
+  code {
+    @apply bg-lightSeashell px-1 py-0.5 rounded-md text-sm whitespace-nowrap shadow-md;
+  }
+
+  q {
+    @apply italic;
+  }
+}

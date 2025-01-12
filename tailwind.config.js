@@ -13,6 +13,7 @@ module.exports = {
       gray: "#707070",
       white: "#FFFFFF",
       black: "#1A1A1A",
+      lightSeashell: "#FFFBF6",
     },
   },
 };
