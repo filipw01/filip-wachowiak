@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Headroom from "react-headroom";
+import Headroom, { ReactHeadroomProps } from "react-headroom";
 import Container from "./base/Container";
 
 export const indexSections = {
@@ -7,6 +7,10 @@ export const indexSections = {
   project: "project",
   work: "work",
 };
+
+const TypecastedHeadroom = Headroom as unknown as React.ComponentType<
+  Omit<ReactHeadroomProps, "children"> & { children: React.ReactNode }
+>;
 
 const navigationElements = [
   { name: "About me", id: indexSections.about, url: "/" },
@@ -20,7 +24,7 @@ export default function Navigation() {
 
   return (
     <header className="absolute z-10 w-full">
-      <Headroom>
+      <TypecastedHeadroom>
         <div className="lg:hidden">
           <Container>
             <button
@@ -122,7 +126,7 @@ export default function Navigation() {
             </div>
           </Container>
         </div>
-      </Headroom>
+      </TypecastedHeadroom>
     </header>
   );
 }
