@@ -48,7 +48,7 @@ export default function TestPage({
             <div className="w-1 h-1 bg-gray rounded-full" />
             <p className="text-sm text-gray">{minutesToRead} min read</p>
           </div>
-          <h1>{mdxSource.frontmatter.title}</h1>
+          <h1>{mdxSource.frontmatter.title as string}</h1>
         </div>
         <div className="blog-post-wrapper">
           <MDXRemote {...mdxSource} />

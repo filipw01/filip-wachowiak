@@ -23,7 +23,7 @@
         "name": "next"
       }
     ],
-    "types": ["node", "@mdx-js/react"]
+    "types": ["node"]
   },
   "include": [
     "next-env.d.ts",
